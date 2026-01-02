@@ -1,169 +1,331 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import useTheme from '../../hooks/useTheme';
-import { Menu, X, MessageCircle, Sun, Moon } from 'lucide-react';
-import { BRAND } from '../../utils/constants';
-import LogoDark from '../../assets/logo.png';
-import LogoLight from '../../assets/xash_logo.jpg';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(false);
+  const location = useLocation();
 
-  const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/services', label: 'Services' },
-    { path: '/agents', label: 'Become an Agent' },
-    { path: '/contact', label: 'Contact' },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setSolutionsOpen(false);
+    setLegalOpen(false);
+  }, [location]);
+
+  const isActive = (path) => location.pathname === path;
+
+  const SolutionsDropdown = () => (
+    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+      <Link
+        to="/pos"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Xash POS
+      </Link>
+      <Link
+        to="/developers"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Developers / API
+      </Link>
+    </div>
+  );
+
+  const LegalDropdown = () => (
+    <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2">
+      <Link
+        to="/privacy-policy"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Privacy Policy
+      </Link>
+      <Link
+        to="/terms-of-service"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Terms of Service
+      </Link>
+      <Link
+        to="/aml-policy"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        AML/KYC Policy
+      </Link>
+      <Link
+        to="/data-protection"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Data Protection
+      </Link>
+      <Link
+        to="/cookie-policy"
+        className="block px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-700"
+      >
+        Cookie Policy
+      </Link>
+    </div>
+  );
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#0B3C5D]/95 backdrop-blur-sm shadow-lg border-b border-gray-200 dark:border-gray-700">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white shadow-md'
+          : 'bg-white'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-<div className="flex items-center">
-  <Link to="/" className="flex items-center ">
-    {/* Logo Image Container */}
-    <div className="relative w-20  rounded-xl flex items-center justify-center  group-hover:scale-110 transition-transform duration-200 overflow-hidden  p-1">
-      {/* Light mode logo */}
-      <img 
-        src={LogoLight}
-        alt="XASH Solutions" 
-        className="w-full h-full  dark:hidden"
-      />
-      {/* Dark mode logo */}
-      <img 
-        src={LogoDark} 
-        alt="XASH Solutions" 
-        className="w-full h-full  hidden dark:block"
-      />
-      
-    </div>
-   
-  </Link>
-</div>
+          <Link to="/" className="flex items-center">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">X</span>
+            </div>
+            <span className="ml-3 text-2xl font-bold text-gray-900">
+              xash
+            </span>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  `px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? 'bg-[#1F6AE1] text-white shadow-lg'
-                      : 'text-[#1A1A1A] dark:text-gray-200 hover:bg-[#F5F7FA] dark:hover:bg-gray-800'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            {/* WhatsApp Button */}
-            <a
-              href={`https://wa.me/${BRAND.contacts.whatsapp.replace(/\D/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-xl font-medium transition-all shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Chat on WhatsApp
-            </a>
-
-            {/* Register as Agent Button */}
+          <div className="hidden md:flex items-center space-x-6">
             <Link
-              to="/agents"
-              className="bg-[#F5B700] hover:bg-yellow-600 text-[#1A1A1A] px-5 py-2.5 rounded-xl font-medium transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              to="/"
+              className={`text-sm font-medium transition-colors ${
+                isActive('/') ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+              }`}
             >
-              Register as Agent
+              Home
             </Link>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2.5 rounded-xl bg-[#F5F7FA] dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all shadow-md hover:shadow-lg"
-              aria-label="Toggle theme"
+            {/* Solutions Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setSolutionsOpen(!solutionsOpen)}
+                className={`flex items-center text-sm font-medium transition-colors ${
+                  location.pathname.startsWith('/pos') || location.pathname.startsWith('/developers')
+                    ? 'text-purple-600'
+                    : 'text-gray-700 hover:text-purple-600'
+                }`}
+              >
+                Solutions
+                <ChevronDown className={`ml-1 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} size={16} />
+              </button>
+              {solutionsOpen && <SolutionsDropdown />}
+            </div>
+
+            <Link
+              to="/about"
+              className={`text-sm font-medium transition-colors ${
+                isActive('/about') ? 'text-purple-600' : 'text-gray-700 hover:text-purple-600'
+              }`}
             >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-[#F5B700]" />
-              ) : (
-                <Moon className="w-5 h-5 text-[#0B3C5D]" />
-              )}
-            </button>
+              About Xash
+            </Link>
+
+            {/* Legal Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setLegalOpen(!legalOpen)}
+                className={`flex items-center text-sm font-medium transition-colors ${
+                  location.pathname.includes('policy') || location.pathname.includes('terms')
+                    ? 'text-purple-600'
+                    : 'text-gray-700 hover:text-purple-600'
+                }`}
+              >
+                Legal & Compliance
+                <ChevronDown className={`ml-1 transition-transform ${legalOpen ? 'rotate-180' : ''}`} size={16} />
+              </button>
+              {legalOpen && <LegalDropdown />}
+            </div>
+
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-purple-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+              >
+                Get Started
+              </motion.button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl bg-[#F5F7FA] dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-[#F5B700]" />
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            <AnimatePresence mode="wait">
+              {isMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X size={24} className="text-gray-700" />
+                </motion.div>
               ) : (
-                <Moon className="w-5 h-5 text-[#0B3C5D]" />
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu size={24} className="text-gray-700" />
+                </motion.div>
               )}
-            </button>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-[#1A1A1A] dark:text-gray-200 hover:bg-[#F5F7FA] dark:hover:bg-gray-800 rounded-xl transition-all"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+            </AnimatePresence>
+          </button>
         </div>
+      </div>
 
-        {/* Mobile menu */}
+      {/* Mobile Navigation */}
+      <AnimatePresence>
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 dark:border-gray-700 py-4">
-            <div className="space-y-2">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `block px-4 py-3 rounded-xl text-base font-medium transition-all ${
-                      isActive
-                        ? 'bg-[#1F6AE1] text-white shadow-lg'
-                        : 'text-[#1A1A1A] dark:text-gray-200 hover:bg-[#F5F7FA] dark:hover:bg-gray-800'
-                    }`
-                  }
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
-              <div className="pt-4 space-y-2">
-                <a
-                  href={`https://wa.me/${BRAND.contacts.whatsapp.replace('+', '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-medium transition-all shadow-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat on WhatsApp
-                </a>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white border-t"
+          >
+            <div className="px-4 py-6 space-y-4">
+              <Link
+                to="/"
+                className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                  isActive('/')
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              
+              <div className="pl-4 space-y-2">
+                <p className="text-sm font-semibold text-gray-500 mb-2">Solutions</p>
                 <Link
-                  to="/agents"
-                  className="block text-center bg-[#F5B700] hover:bg-yellow-600 text-[#1A1A1A] px-4 py-3 rounded-xl font-medium transition-all shadow-lg"
+                  to="/pos"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/pos')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Register as Agent
+                  Xash POS
+                </Link>
+                <Link
+                  to="/developers"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/developers')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Developers / API
                 </Link>
               </div>
+              
+              <Link
+                to="/about"
+                className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                  isActive('/about')
+                    ? 'bg-purple-600 text-white'
+                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Xash
+              </Link>
+              
+              <div className="pl-4 space-y-2">
+                <p className="text-sm font-semibold text-gray-500 mb-2">Legal & Compliance</p>
+                <Link
+                  to="/privacy-policy"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/privacy-policy')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/terms-of-service"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/terms-of-service')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  to="/aml-policy"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/aml-policy')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  AML/KYC Policy
+                </Link>
+                <Link
+                  to="/data-protection"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/data-protection')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Data Protection
+                </Link>
+                <Link
+                  to="/cookie-policy"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/cookie-policy')
+                      ? 'bg-purple-600 text-white'
+                      : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Cookie Policy
+                </Link>
+              </div>
+              
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                <button className="w-full bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                  Get Started
+                </button>
+              </Link>
             </div>
-          </div>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
