@@ -12,6 +12,7 @@ import TermsOfService from './pages/TermsOfService';
 import AMLPolicy from './pages/AMLPolicy';
 import DataProtection from './pages/DataProtection';
 import CookiePolicy from './pages/CookiePolicy';
+import Agents from './pages/Agents';
 
 function ScrollToTop() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<><ScrollToTop /><Home /></>} />
           <Route path="/pos" element={<><ScrollToTop /><XashPOS /></>} />
           <Route path="/developers" element={<><ScrollToTop /><Developers /></>} />
+          <Route path="/agents" element={<><ScrollToTop /><Agents /></>} />
           <Route path="/about" element={<><ScrollToTop /><About /></>} />
           <Route path="/contact" element={<><ScrollToTop /><Contact /></>} />
           <Route path="/privacy-policy" element={<><ScrollToTop /><PrivacyPolicy /></>} />
