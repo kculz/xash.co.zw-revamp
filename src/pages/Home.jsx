@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe } from 'lucide-react';
+import econetLogo from '../assets/partners/econet.png';
+import netoneLogo from '../assets/partners/netone.svg';
+import telecelLogo from '../assets/partners/telecel.jpeg';
+import zesaLogo from '../assets/partners/zetdc.png';
+import rbzLogo from '../assets/partners/zb.jpg';
+import innbucksLogo from '../assets/partners/inbucks.png';
+import hero_pos from '../assets/images/hero-pos.jpg';
+import business_pos from '../assets/images/business-pos.jpg';
+import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 
 const Home = () => {
   const FEATURES = [
@@ -26,8 +35,8 @@ const Home = () => {
 
   const STATS = [
     { value: '500+', label: 'Active Agents', color: '#7C3AED' },
-    { value: '$2M+', label: 'Monthly Volume', color: '#2563EB' },
-    { value: '50K+', label: 'Daily Transactions', color: '#10B981' },
+    { value: '$2K+', label: 'Monthly Volume', color: '#2563EB' },
+    { value: '5K+', label: 'Daily Transactions', color: '#10B981' },
     { value: '99.9%', label: 'System Uptime', color: '#F59E0B' }
   ];
 
@@ -58,13 +67,15 @@ const Home = () => {
     }
   ];
 
+  
+
   const PARTNERS = [
-    { name: 'Econet Wireless', type: 'Network Partner', logo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&h=100&fit=crop' },
-    { name: 'NetOne', type: 'Network Partner', logo: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=100&fit=crop' },
-    { name: 'Telecel', type: 'Network Partner', logo: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=100&fit=crop' },
-    { name: 'ZESA', type: 'Utility Partner', logo: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=200&h=100&fit=crop' },
-    { name: 'Reserve Bank', type: 'Regulatory', logo: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&h=100&fit=crop' },
-    { name: 'InnBucks', type: 'Payment Partner', logo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&h=100&fit=crop' },
+    { name: 'Econet Wireless', type: 'Network Partner', logo: econetLogo },
+    { name: 'NetOne', type: 'Network Partner', logo: netoneLogo },
+    { name: 'Telecel', type: 'Network Partner', logo: telecelLogo },
+    { name: 'ZETDC', type: 'Utility Partner', logo: zesaLogo },
+    { name: 'Reserve Bank', type: 'Regulatory', logo: rbzLogo },
+    { name: 'InnBucks', type: 'Payment Partner', logo: innbucksLogo },
   ];
 
   const PRODUCTS = [
@@ -195,8 +206,8 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="relative"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" 
+              <ImageWithSkeleton 
+                src={hero_pos}
                 alt="POS System" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
@@ -293,8 +304,8 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&h=600&fit=crop" 
+              <ImageWithSkeleton 
+                src={business_pos} 
                 alt="Shop Owner" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from "../../assets/xash_logo.jpg"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,12 +94,11 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">X</span>
-            </div>
-            <span className="ml-3 text-2xl font-bold text-gray-900">
-              xash
-            </span>
+            <img 
+              src={logo} 
+              alt="Xash Logo"
+              className="w-20  rounded-lg"
+            />
           </Link>
 
           {/* Desktop Navigation */}

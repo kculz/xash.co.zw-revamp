@@ -252,51 +252,7 @@ const TermsOfService = () => {
         </div>
       </section>
 
-      {/* Transaction Limits */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Transaction Limits & Requirements</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-gray-200">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Account Type</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Daily Limit</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Monthly Limit</th>
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Verification</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-4 px-4 text-gray-700">Basic</td>
-                    <td className="py-4 px-4 text-gray-700">$500</td>
-                    <td className="py-4 px-4 text-gray-700">$5,000</td>
-                    <td className="py-4 px-4 text-gray-700">ID & Phone</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="py-4 px-4 text-gray-700">Enhanced</td>
-                    <td className="py-4 px-4 text-gray-700">$2,000</td>
-                    <td className="py-4 px-4 text-gray-700">$20,000</td>
-                    <td className="py-4 px-4 text-gray-700">ID, Address & Bank</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-4 text-gray-700">Business</td>
-                    <td className="py-4 px-4 text-gray-700">$5,000</td>
-                    <td className="py-4 px-4 text-gray-700">$50,000</td>
-                    <td className="py-4 px-4 text-gray-700">Full KYC & Registration</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Important Notices */}
       <section className="py-20 bg-white">

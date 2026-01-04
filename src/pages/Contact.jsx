@@ -13,6 +13,9 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { useState } from 'react';
+import about from '../assets/images/about.jpeg';
+import MapSection from './MapSection';
+import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -311,10 +314,10 @@ const Contact = () => {
             >
               {/* Office Image */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop" 
-                  alt="Office Building" 
-                  className="w-full h-64 object-cover"
+                <ImageWithSkeleton 
+                  src={about}
+                  alt="Office Building"
+                  className="w-full h-64 rounded-lg shadow-md"
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4 text-gray-900">Visit Our Office</h3>
@@ -359,27 +362,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Quick Support */}
-              <div style={{ backgroundColor: '#7C3AED' }} className="rounded-xl shadow-lg p-6 text-white">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-4">
-                    <MessageCircle className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-2xl font-bold">Need Quick Support?</h3>
-                </div>
-                <p className="text-purple-100 mb-6 leading-relaxed">
-                  For urgent matters, reach out to us on WhatsApp for instant support available 24/7.
-                </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{ backgroundColor: '#10B981' }}
-                  className="w-full text-white py-3 rounded-lg font-bold inline-flex items-center justify-center shadow-lg"
-                >
-                  <MessageCircle className="mr-2" size={20} />
-                  Chat on WhatsApp
-                </motion.button>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -388,56 +370,19 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Find Us on the Map</h2>
-            <p className="text-gray-600 text-lg">Located in the heart of Mutare</p>
-          </div>
-          
+         
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="rounded-xl shadow-2xl overflow-hidden"
           >
-            <div className="bg-gray-200 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin size={48} className="mx-auto mb-4 text-gray-400" />
-                <p className="text-gray-600 font-medium">Interactive Map</p>
-                <p className="text-gray-500 text-sm">63 Embassy Building, Mutare</p>
-              </div>
-            </div>
+            <MapSection />
           </motion.div>
         </div>
       </section>
 
-      {/* FAQ Callout */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
-            <div 
-              style={{ backgroundColor: '#F59E0B' }}
-              className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-            >
-              <AlertCircle className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Have a Question?
-            </h2>
-            <p className="text-gray-600 mb-6 text-lg">
-              Check out our FAQ section for quick answers to common questions about XASH services, 
-              POS devices, agent registration, and more.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              style={{ backgroundColor: '#7C3AED' }}
-              className="text-white px-8 py-3 rounded-lg font-bold inline-flex items-center shadow-lg"
-            >
-              View FAQ
-            </motion.button>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

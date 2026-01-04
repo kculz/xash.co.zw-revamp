@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
@@ -15,29 +15,35 @@ import CookiePolicy from './pages/CookiePolicy';
 import Agents from './pages/Agents';
 
 function ScrollToTop() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname]); // This triggers every time the path changes
+
   return null;
 }
 
 function App() {
   return (
     <Router>
+      {/* Place it here once - it handles all route changes automatically */}
+      <ScrollToTop /> 
+      
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-brand-50/30">
         <Header />
         <Routes>
-          <Route path="/" element={<><ScrollToTop /><Home /></>} />
-          <Route path="/pos" element={<><ScrollToTop /><XashPOS /></>} />
-          <Route path="/developers" element={<><ScrollToTop /><Developers /></>} />
-          <Route path="/agents" element={<><ScrollToTop /><Agents /></>} />
-          <Route path="/about" element={<><ScrollToTop /><About /></>} />
-          <Route path="/contact" element={<><ScrollToTop /><Contact /></>} />
-          <Route path="/privacy-policy" element={<><ScrollToTop /><PrivacyPolicy /></>} />
-          <Route path="/terms-of-service" element={<><ScrollToTop /><TermsOfService /></>} />
-          <Route path="/aml-policy" element={<><ScrollToTop /><AMLPolicy /></>} />
-          <Route path="/data-protection" element={<><ScrollToTop /><DataProtection /></>} />
-          <Route path="/cookie-policy" element={<><ScrollToTop /><CookiePolicy /></>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/pos" element={<XashPOS />} />
+          <Route path="/developers" element={<Developers />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/aml-policy" element={<AMLPolicy />} />
+          <Route path="/data-protection" element={<DataProtection />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
         <Footer />
       </div>

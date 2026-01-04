@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, AlertCircle, CheckCircle2, DollarSign, Package, Smartphone, Zap, Wifi, Phone, CreditCard, FileText, Users } from 'lucide-react';
+import pos from '../assets/images/pos.jpg';
+import community_pos from '../assets/images/community-pos.jpg';
+import local_pos from '../assets/images/local-pos.jpg';
 
 const XashPOS = () => {
   const COMMISSION_DATA = [
@@ -28,7 +31,7 @@ const XashPOS = () => {
       name: 'ZESA Tokens', 
       icon: Zap, 
       color: '#F59E0B',
-      description: 'Prepaid electricity tokens for ZESA customers'
+      description: 'Prepaid electricity tokens for ZETDC customers'
     },
     { 
       name: 'Equal WiFi', 
@@ -132,7 +135,7 @@ const XashPOS = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop" 
+                src={pos} 
                 alt="POS Device in Use" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
@@ -293,7 +296,7 @@ const XashPOS = () => {
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
             <img 
-              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&h=600&fit=crop" 
+              src={community_pos} 
               alt="Shop Transaction" 
               className="rounded-2xl shadow-2xl w-full h-auto order-2 lg:order-1"
             />
@@ -448,7 +451,7 @@ const XashPOS = () => {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop" 
+                src={local_pos}
                 alt="Customer Support" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
@@ -511,16 +514,12 @@ const XashPOS = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-white text-purple-700 px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center text-lg shadow-xl justify-center"
             >
+              <a href="/contact">
               Apply for Free POS
+              </a>
               <ArrowRight className="ml-2" size={24} />
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-lg font-bold transition-all text-lg"
-            >
-              Download Agreement
-            </motion.button>
+            
           </div>
           <p className="text-purple-200 text-sm mt-8">
             Based in Mutare • Free device for qualifying shops • Weekly commission payouts

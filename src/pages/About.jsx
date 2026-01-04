@@ -13,6 +13,8 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
+import about from '../assets/images/about.jpeg';
+import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 
 const About = () => {
   const values = [
@@ -77,29 +79,23 @@ const About = () => {
 
   const stats = [
     { value: '500+', label: 'Active Agents', sublabel: 'Across Zimbabwe' },
-    { value: '$2M+', label: 'Monthly Volume', sublabel: 'Processed' },
+    { value: '$2k+', label: 'Monthly Volume', sublabel: 'Processed' },
     { value: '24/7', label: 'Support', sublabel: 'Always Available' },
     { value: '99.9%', label: 'Uptime', sublabel: 'System Reliability' }
   ];
 
   const teamMembers = [
     { 
-      name: 'Takudzwa M.', 
-      role: 'CEO & Founder', 
-      bio: 'Fintech entrepreneur with 10+ years experience',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop'
+      name: 'Rodney Jesiman.', 
+      role: 'CEO & Co-Founder', 
+      bio: 'Fintech entrepreneur with 5+ years experience',
+      image: 'https://media.licdn.com/dms/image/v2/C4D03AQG-KKg8VB9d3w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1651585358689?e=1769040000&v=beta&t=1OstlOcEqajOX6OV0ren-gNrhWmFT3qGuXTOkLDuIuU'
     },
     { 
-      name: 'Sarah C.', 
-      role: 'CTO', 
-      bio: 'Former banking systems architect',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop'
-    },
-    { 
-      name: 'James T.', 
-      role: 'Head of Operations', 
-      bio: '15 years in retail financial services',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
+      name: 'Joshua Munapo.', 
+      role: 'CTO & Co-Founder', 
+      bio: 'Software Engineer with 5+ years experience',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQHFBK9wyLTTtA/profile-displayphoto-shrink_800_800/B56ZeO6V6hG0Ac-/0/1750449349774?e=1769040000&v=beta&t=FndFTrIP8J_Ht3lI3yghDKMkyDL7hwrP3B9K41rxIG0'
     }
   ];
 
@@ -188,10 +184,10 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
-                alt="Team Collaboration" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+              <ImageWithSkeleton 
+                src={about}
+                alt="Office Building"
+                className="w-full h-64 rounded-lg shadow-md"
               />
             </motion.div>
 
@@ -225,7 +221,7 @@ const About = () => {
                 </div>
                 <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100">
                   <Users style={{ color: '#2563EB' }} className="w-8 h-8 mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">50+</div>
+                  <div className="text-2xl font-bold text-gray-900">5+</div>
                   <div className="text-sm text-gray-600">Team Members</div>
                 </div>
               </div>
@@ -423,16 +419,11 @@ const About = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-purple-700 px-10 py-4 rounded-lg font-bold shadow-xl inline-flex items-center justify-center"
               >
+                <a href="/contact">
                 Become an Agent
+                </a>
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                style={{ backgroundColor: '#10B981' }}
-                className="text-white px-10 py-4 rounded-lg font-bold inline-flex items-center justify-center"
-              >
-                Contact Us
-              </motion.button>
+              
             </div>
           </motion.div>
         </div>

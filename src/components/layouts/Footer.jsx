@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Building } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { LEGAL_PAGES, COMPANY_INFO } from '../../../data/constants';
+import logo from "../../assets/logo.png"
 
 const Footer = () => {
   const quickLinks = [
@@ -43,12 +44,13 @@ const Footer = () => {
         >
           {/* Brand */}
           <motion.div variants={itemVariants}>
-            <div className="flex items-center mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">X</span>
-              </div>
-              <span className="ml-3 text-2xl font-bold">xash</span>
-            </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Xash Logo"
+                className="w-20  rounded-lg"
+              />
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {COMPANY_INFO.name}. Modern fintech solutions for retail across Zimbabwe. 
               Secure, reliable, and commission-driven.
