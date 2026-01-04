@@ -3,6 +3,8 @@ import { ArrowRight, Shield, AlertCircle, CheckCircle2, DollarSign, Package, Sma
 import pos from '../assets/images/pos.jpg';
 import community_pos from '../assets/images/community-pos.jpg';
 import local_pos from '../assets/images/local-pos.jpg';
+import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
+import { Helmet } from 'react-helmet';
 
 const XashPOS = () => {
   const COMMISSION_DATA = [
@@ -79,6 +81,13 @@ const XashPOS = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Xash POS - Xash</title>
+        <meta 
+          name="description" 
+          content="Discover Xash POS, a retail-focused solution offering free devices, unified balances, and Zimbabwe-based support for selling digital products and earning commissions." 
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,7 +143,7 @@ const XashPOS = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <img 
+              <ImageWithSkeleton 
                 src={pos} 
                 alt="POS Device in Use" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
@@ -295,7 +304,7 @@ const XashPOS = () => {
             viewport={{ once: true }}
             className="grid lg:grid-cols-2 gap-12 items-center"
           >
-            <img 
+            <ImageWithSkeleton 
               src={community_pos} 
               alt="Shop Transaction" 
               className="rounded-2xl shadow-2xl w-full h-auto order-2 lg:order-1"
@@ -450,7 +459,7 @@ const XashPOS = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img 
+              <ImageWithSkeleton 
                 src={local_pos}
                 alt="Customer Support" 
                 className="rounded-2xl shadow-2xl w-full h-auto"

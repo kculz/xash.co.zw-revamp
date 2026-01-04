@@ -16,6 +16,7 @@ import {
   ArrowRight,
   Zap
 } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const Agents = () => {
   const stats = [
@@ -132,6 +133,13 @@ const Agents = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Become a XASH Agent - Earn Commissions with Zero Investment</title>
+        <meta 
+          name="description" 
+          content="Join XASH as an agent and start earning commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20" style={{ backgroundColor: '#7C3AED' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

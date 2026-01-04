@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Shield, Lock, Eye, FileText, Database, Users, Server, Cookie, AlertCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
   const sections = [
@@ -65,6 +66,13 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Privacy Policy - Xash</title>
+        <meta 
+          name="description" 
+          content="Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

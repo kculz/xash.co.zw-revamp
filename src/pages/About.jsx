@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import about from '../assets/images/about.jpeg';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   const values = [
@@ -128,6 +129,10 @@ const About = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>About Us - Xash</title>
+        <meta name="description" content="Learn about Xash, Zimbabwe's trusted fintech partner, and our mission to make digital financial services accessible to every retail business." /> 
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

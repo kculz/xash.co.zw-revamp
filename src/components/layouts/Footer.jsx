@@ -143,14 +143,8 @@ const Footer = () => {
         >
           <p className="text-gray-500 mb-4 md:mb-0">
             &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.
-            <span className="block md:inline md:ml-2 mt-1 md:mt-0">
-              Last updated: {COMPANY_INFO.lastUpdated}
-            </span>
           </p>
-          <div className="flex items-center space-x-2 text-xs text-gray-600 bg-gray-800 px-4 py-2 rounded-full">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>Xash provides payment facilitation in partnership with licensed institutions. Not a bank.</span>
-          </div>
+          
         </motion.div>
       </div>
     </footer>

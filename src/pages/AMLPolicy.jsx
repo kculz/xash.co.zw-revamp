@@ -12,6 +12,7 @@ import {
   XCircle,
   Scale
 } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const AMLPolicy = () => {
   const requirements = [
@@ -136,6 +137,13 @@ const AMLPolicy = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>AML/KYC Policy - Xash</title>
+        <meta 
+          name="description" 
+          content="Read Xash's comprehensive AML/KYC Policy outlining our commitment to anti-money laundering and know your customer compliance." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

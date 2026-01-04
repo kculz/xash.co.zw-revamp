@@ -10,6 +10,7 @@ import innbucksLogo from '../assets/partners/inbucks.png';
 import hero_pos from '../assets/images/hero-pos.jpg';
 import business_pos from '../assets/images/business-pos.jpg';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const FEATURES = [
@@ -92,7 +93,7 @@ const Home = () => {
       description: 'Econet data bundles for smartphones and devices'
     },
     { 
-      name: 'ZESA Tokens', 
+      name: 'ZETDC Tokens', 
       icon: Zap, 
       color: '#F59E0B',
       description: 'Prepaid electricity tokens for ZESA customers'
@@ -107,6 +108,14 @@ const Home = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Home - Xash</title>
+        <meta 
+          name="description" 
+          content="Xash provides retail-focused POS solutions that empower shops to sell airtime, bundles, and ZESA tokens while earning commission on every transaction." 
+        />  
+      </Helmet>
+
       {/* Hero Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

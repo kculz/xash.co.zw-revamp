@@ -16,6 +16,7 @@ import { useState } from 'react';
 import about from '../assets/images/about.jpeg';
 import MapSection from './MapSection';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
+import { Helmet } from 'react-helmet';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -101,6 +102,13 @@ const Contact = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Contact Us - Xash</title>
+        <meta 
+          name="description" 
+          content="Get in touch with Xash for support, inquiries, or partnership opportunities. We're here to help your business thrive with our fintech solutions." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

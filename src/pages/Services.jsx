@@ -131,9 +131,11 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-[#F5F7FA] dark:bg-gray-900">
       <Helmet>
-                <meta charSet="utf-8" />
-                <title>Xash | Services</title>
-                <link rel="canonical" href="http://xash.co.zw/services" />
+        <title>Services - Xash</title>
+        <meta 
+          name="description" 
+          content="Explore Xash's comprehensive range of services including airtime top-up, electricity payments, DSTV subscriptions, and water bill payments. All accessible via WhatsApp." 
+        />
        </Helmet>
       {/* Hero */}
       <PageHero

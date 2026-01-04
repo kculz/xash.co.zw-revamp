@@ -12,6 +12,7 @@ import {
   Info,
   AlertCircle
 } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const CookiePolicy = () => {
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
@@ -115,6 +116,13 @@ const CookiePolicy = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Cookie Policy - Xash</title>
+        <meta 
+          name="description" 
+          content="Learn about Xash's Cookie Policy, including the types of cookies we use, their purposes, and how you can manage your cookie preferences." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -21,6 +21,7 @@ import {
   Bolt
 } from 'lucide-react';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const Developers = () => {
   const [apiKey, setApiKey] = useState('xv_sk_live_**********');
@@ -312,6 +313,13 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Developers - Xash</title>
+        <meta 
+          name="description" 
+          content="Explore Xash Vend API for seamless integration of airtime, data bundles, WiFi vouchers, and electricity tokens into your applications." 
+        />  
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Scale, FileText, AlertCircle, Shield, Users, DollarSign, XCircle, Clock, CheckCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 const TermsOfService = () => {
   const sections = [
@@ -121,6 +122,13 @@ const TermsOfService = () => {
 
   return (
     <div className="pt-20 bg-white">
+      <Helmet>
+        <title>Terms of Service - Xash</title>
+        <meta 
+          name="description" 
+          content="Read the Terms of Service for Xash Solutions, outlining user responsibilities, prohibited activities, liability limitations, and termination policies." 
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
