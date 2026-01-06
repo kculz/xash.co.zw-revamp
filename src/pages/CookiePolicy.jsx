@@ -41,7 +41,7 @@ const CookiePolicy = () => {
       name: 'Essential Cookies',
       icon: Shield,
       purpose: 'Required for basic site functionality and security',
-      color: '#10B981',
+      color: '#1F6AE1',
       necessary: true,
       examples: [
         'Authentication and session management',
@@ -55,7 +55,7 @@ const CookiePolicy = () => {
       name: 'Performance Cookies',
       icon: BarChart,
       purpose: 'Help us understand how visitors use our site',
-      color: '#2563EB',
+      color: '#0B3C5D',
       necessary: false,
       examples: [
         'Google Analytics for visitor statistics',
@@ -69,7 +69,7 @@ const CookiePolicy = () => {
       name: 'Functional Cookies',
       icon: Settings,
       purpose: 'Remember your preferences and settings',
-      color: '#7C3AED',
+      color: '#1F6AE1',
       necessary: false,
       examples: [
         'Language preferences',
@@ -83,7 +83,7 @@ const CookiePolicy = () => {
       name: 'Marketing Cookies',
       icon: Target,
       purpose: 'Used to deliver relevant advertisements',
-      color: '#F59E0B',
+      color: '#F5B700',
       necessary: false,
       examples: [
         'Retargeting and remarketing',
@@ -124,7 +124,7 @@ const CookiePolicy = () => {
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -132,10 +132,10 @@ const CookiePolicy = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-2xl mb-6 shadow-lg">
-                <Cookie className="text-orange-600" size={32} />
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#F5F7FA] rounded-2xl mb-6 shadow-lg border border-[#1F6AE1]/20">
+                <Cookie className="text-[#1F6AE1]" size={32} />
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
                 Cookie Policy
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
@@ -156,12 +156,12 @@ const CookiePolicy = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-blue-50 rounded-xl p-8 border border-blue-100"
+            className="bg-[#F5F7FA] rounded-xl p-8 border border-[#1F6AE1]/20"
           >
             <div className="flex items-start">
-              <Info className="text-blue-600 mr-4 flex-shrink-0 mt-1" size={24} />
+              <Info className="text-[#1F6AE1] mr-4 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">What Are Cookies?</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">What Are Cookies?</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Cookies are small text files stored on your device when you visit websites. They help websites 
                   remember information about your visit, which can make it easier to visit the site again and make 
@@ -178,13 +178,13 @@ const CookiePolicy = () => {
       </section>
 
       {/* Types of Cookies */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Cookie Types
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Types of Cookies We Use</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Types of Cookies We Use</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Understanding the different types of cookies and their purposes
             </p>
@@ -220,16 +220,16 @@ const CookiePolicy = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h4 className="font-bold text-gray-900 mb-3">Examples:</h4>
+                  <h4 className="font-bold text-[#1A1A1A] mb-3">Examples:</h4>
                   <ul className="space-y-2 mb-4">
                     {type.examples.map((example, idx) => (
                       <li key={idx} className="flex items-start text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[#F5B700] mr-2 mt-0.5 flex-shrink-0" />
                         {example}
                       </li>
                     ))}
                   </ul>
-                  <div className="bg-gray-50 rounded-lg p-3 flex items-center">
+                  <div className="bg-[#F5F7FA] rounded-lg p-3 flex items-center">
                     <Eye className="w-4 h-4 text-gray-400 mr-2" />
                     <span className="text-xs text-gray-600">
                       <strong>Retention:</strong> {type.retention}
@@ -242,13 +242,11 @@ const CookiePolicy = () => {
         </div>
       </section>
 
-
-
       {/* Browser Controls */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Browser Controls</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Browser Controls</h2>
             <p className="text-gray-600 text-lg">
               How to manage cookies in popular browsers
             </p>
@@ -268,9 +266,9 @@ const CookiePolicy = () => {
               {browsers.map((browser, index) => (
                 <div 
                   key={index}
-                  className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+                  className="bg-[#F5F7FA] rounded-lg p-4 border border-gray-200"
                 >
-                  <h4 className="font-bold text-gray-900 mb-2">{browser.name}</h4>
+                  <h4 className="font-bold text-[#1A1A1A] mb-2">{browser.name}</h4>
                   <p className="text-sm text-gray-600">{browser.instructions}</p>
                 </div>
               ))}
@@ -299,30 +297,30 @@ const CookiePolicy = () => {
           >
             <div className="flex items-start mb-6">
               <div 
-                style={{ backgroundColor: '#2563EB' }}
+                style={{ backgroundColor: '#1F6AE1' }}
                 className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg"
               >
                 <Eye className="text-white" size={28} />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Cookies</h2>
+                <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Third-Party Cookies</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   We use third-party services that may place cookies on your device. These services help us 
                   analyze site usage, provide social media features, and deliver relevant advertisements.
                 </p>
-                <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-                  <h4 className="font-bold text-gray-900 mb-3">Third-party services we use:</h4>
+                <div className="bg-[#F5F7FA] rounded-lg p-4 border border-[#1F6AE1]/20">
+                  <h4 className="font-bold text-[#1A1A1A] mb-3">Third-party services we use:</h4>
                   <ul className="space-y-2 text-gray-700 text-sm">
                     <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#1F6AE1] mr-2 mt-0.5 flex-shrink-0" />
                       <span><strong>Google Analytics:</strong> For website analytics and performance tracking</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#1F6AE1] mr-2 mt-0.5 flex-shrink-0" />
                       <span><strong>Social Media Plugins:</strong> For social sharing functionality</span>
                     </li>
                     <li className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#1F6AE1] mr-2 mt-0.5 flex-shrink-0" />
                       <span><strong>Advertising Partners:</strong> For targeted advertising (if enabled)</span>
                     </li>
                   </ul>
@@ -334,7 +332,7 @@ const CookiePolicy = () => {
       </section>
 
       {/* Updates to Policy */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -342,7 +340,7 @@ const CookiePolicy = () => {
             viewport={{ once: true }}
             className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates to This Cookie Policy</h2>
+            <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Updates to This Cookie Policy</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We may update our Cookie Policy from time to time. We will notify you of any changes by posting 
               the new Cookie Policy on this page and updating the "Last updated" date at the top of this policy.
@@ -351,7 +349,7 @@ const CookiePolicy = () => {
               You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie 
               Policy are effective when they are posted on this page.
             </p>
-            <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div className="bg-[#F5F7FA] rounded-lg p-4 border border-gray-200">
               <p className="text-sm text-gray-600">
                 <strong>Last updated:</strong> January 1, 2026
               </p>
@@ -367,28 +365,28 @@ const CookiePolicy = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ backgroundColor: '#7C3AED' }}
+            style={{ backgroundColor: '#0B3C5D' }}
             className="rounded-xl shadow-2xl p-8 text-white"
           >
             <div className="text-center mb-8">
               <Cookie className="w-16 h-16 mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">Questions About Cookies?</h2>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-[#F5F7FA] leading-relaxed">
                 If you have any questions about our use of cookies, please contact us
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Email</h3>
-                <p className="text-purple-100 text-sm">privacy@xash.co.zw</p>
+                <p className="text-[#F5F7FA] text-sm">privacy@xash.co.zw</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Phone</h3>
-                <p className="text-purple-100 text-sm">+263 716 409 412</p>
+                <p className="text-[#F5F7FA] text-sm">+263 716 409 412</p>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-white/20 text-center">
-              <p className="text-purple-100 text-sm">
+              <p className="text-[#F5F7FA] text-sm">
                 We're committed to transparency and protecting your privacy. Contact us anytime 
                 with questions or concerns about cookies.
               </p>

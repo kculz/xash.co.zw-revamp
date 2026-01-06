@@ -45,13 +45,13 @@ const WhatsAppMockup = () => {
     {
       id: 7,
       sender: 'user',
-      text: '+263 77 123 4567',
+      text: '0779 325 039',
       time: '10:33'
     },
     {
       id: 8,
       sender: 'bot',
-      text: '🎉 Success! Your 2GB bundle has been sent to +263 77 123 4567\n\n💰 Amount: $8.00\n📱 Network: Econet\n📦 Bundle: 2GB Weekly\n\nTransaction ID: XSH123456\n\nThank you for using XASH! 🙏',
+      text: '🎉 Success! Your 2GB bundle has been sent to 0779 325 039\n\n💰 Amount: $8.00\n📱 Network: Econet\n📦 Bundle: 2GB Weekly\n\nTransaction ID: XSH123456\n\nThank you for using XASH! 🙏',
       time: '10:33'
     }
   ];

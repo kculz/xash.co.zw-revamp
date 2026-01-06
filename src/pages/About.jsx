@@ -16,6 +16,7 @@ import {
 import about from '../assets/images/about.jpeg';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const values = [
@@ -23,25 +24,25 @@ const About = () => {
       icon: Target,
       title: 'Our Mission',
       description: 'Empower retail businesses across Zimbabwe with accessible fintech solutions',
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       icon: Shield,
       title: 'Security First',
       description: 'Bank-grade security and compliance in every transaction',
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       icon: Users,
       title: 'Community Focused',
       description: 'Building solutions that work for local communities',
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       icon: TrendingUp,
       title: 'Growth Mindset',
       description: 'Continuous innovation to drive financial inclusion',
-      color: '#F59E0B'
+      color: '#F5B700'
     }
   ];
 
@@ -105,25 +106,25 @@ const About = () => {
       title: 'Transparency',
       description: 'We operate with complete transparency in all our dealings',
       icon: CheckCircle,
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       title: 'Innovation',
       description: 'Constantly improving our services to meet market needs',
       icon: Zap,
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       title: 'Reliability',
       description: 'Building trust through consistent and reliable service delivery',
       icon: Shield,
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       title: 'Customer First',
       description: 'Every decision is made with our customers in mind',
       icon: Heart,
-      color: '#F59E0B'
+      color: '#F5B700'
     }
   ];
 
@@ -134,7 +135,7 @@ const About = () => {
         <meta name="description" content="Learn about Xash, Zimbabwe's trusted fintech partner, and our mission to make digital financial services accessible to every retail business." /> 
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -142,12 +143,12 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
                 About Us
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
                 Building the Future of <br />
-                <span style={{ color: '#7C3AED' }}>Retail Finance</span> in Zimbabwe
+                <span style={{ color: '#1F6AE1' }}>Retail Finance</span> in Zimbabwe
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 We're on a mission to make digital financial services accessible to every retail business, 
@@ -169,10 +170,10 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-xl shadow-lg p-6 text-center border border-gray-100"
+                className="bg-[#F5F7FA] rounded-xl shadow-lg p-6 text-center border border-gray-100"
               >
-                <div className="text-4xl font-bold mb-2 text-gray-900">{stat.value}</div>
-                <div className="text-lg font-semibold text-purple-600 mb-1">{stat.label}</div>
+                <div className="text-4xl font-bold mb-2 text-[#1A1A1A]">{stat.value}</div>
+                <div className="text-lg font-semibold text-[#1F6AE1] mb-1">{stat.label}</div>
                 <div className="text-sm text-gray-500">{stat.sublabel}</div>
               </motion.div>
             ))}
@@ -181,7 +182,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -201,7 +202,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Story</h2>
+              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
                 <p>
                   Founded in Mutare, Zimbabwe, Xash was born from a simple idea: make digital financial 
@@ -220,13 +221,13 @@ const About = () => {
 
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100">
-                  <Building style={{ color: '#7C3AED' }} className="w-8 h-8 mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">2020</div>
+                  <Building style={{ color: '#1F6AE1' }} className="w-8 h-8 mb-2" />
+                  <div className="text-2xl font-bold text-[#1A1A1A]">2020</div>
                   <div className="text-sm text-gray-600">Year Founded</div>
                 </div>
                 <div className="bg-white p-4 rounded-xl shadow-lg border border-gray-100">
-                  <Users style={{ color: '#2563EB' }} className="w-8 h-8 mb-2" />
-                  <div className="text-2xl font-bold text-gray-900">5+</div>
+                  <Users style={{ color: '#0B3C5D' }} className="w-8 h-8 mb-2" />
+                  <div className="text-2xl font-bold text-[#1A1A1A]">5+</div>
                   <div className="text-sm text-gray-600">Team Members</div>
                 </div>
               </div>
@@ -239,10 +240,10 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Our Values
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">What Drives Us</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">What Drives Us</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               The principles that guide everything we do
             </p>
@@ -265,7 +266,7 @@ const About = () => {
                 >
                   <value.icon className="text-white" size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{value.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
@@ -274,13 +275,13 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-purple-50 text-purple-600 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Our Journey
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Milestones & Achievements</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Milestones & Achievements</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Key moments in our growth story
             </p>
@@ -302,21 +303,21 @@ const About = () => {
                   } flex-col`}
                 >
                   {/* Timeline Dot */}
-                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-purple-600 border-4 border-white shadow-lg z-10"></div>
+                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#1F6AE1] border-4 border-white shadow-lg z-10"></div>
                   
                   {/* Content */}
                   <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
                     <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-lg">
                       <div className="flex items-center gap-4 mb-3 justify-start lg:justify-end">
                         <div 
-                          style={{ backgroundColor: '#7C3AED' }}
+                          style={{ backgroundColor: '#1F6AE1' }}
                           className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
                         >
                           <milestone.icon className="w-6 h-6 text-white" />
                         </div>
-                        <div className="text-3xl font-bold text-purple-600">{milestone.year}</div>
+                        <div className="text-3xl font-bold text-[#1F6AE1]">{milestone.year}</div>
                       </div>
-                      <div className="text-xl font-bold text-gray-900 mb-2">{milestone.event}</div>
+                      <div className="text-xl font-bold text-[#1A1A1A] mb-2">{milestone.event}</div>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
@@ -331,7 +332,7 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Our Guiding Principles</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Our Guiding Principles</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               How we operate and serve our customers every day
             </p>
@@ -345,7 +346,7 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-xl shadow-lg p-6 border border-gray-100 text-center"
+                className="bg-[#F5F7FA] rounded-xl shadow-lg p-6 border border-gray-100 text-center"
               >
                 <div 
                   style={{ backgroundColor: principle.color }}
@@ -353,7 +354,7 @@ const About = () => {
                 >
                   <principle.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{principle.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{principle.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{principle.description}</p>
               </motion.div>
             ))}
@@ -361,39 +362,48 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-gray-50">
+      {/* Team Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm font-semibold mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center px-5 py-2 rounded-full bg-[#F5F7FA] text-[#F5B700] text-sm font-semibold mb-6 border border-[#F5B700]/20">
+              <Users className="mr-2" size={16} />
               Meet the Team
-            </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Leadership Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            </div>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Leadership Team</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Experienced professionals driving our vision forward
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl border border-gray-100 shadow-lg overflow-hidden hover:shadow-xl transition-all"
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-3xl border-2 border-gray-100 shadow-2xl overflow-hidden hover:shadow-3xl hover:border-[#1F6AE1]/30 transition-all group"
               >
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <div className="text-purple-600 font-medium mb-4">{member.role}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                <div className="relative overflow-hidden h-80">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-4xl font-bold mb-4 text-[#1A1A1A]">{member.name}</h3>
+                  <div className="text-[#1F6AE1] font-bold text-lg mb-4">{member.role}</div>
+                  <p className="text-gray-600 leading-relaxed text-lg">{member.bio}</p>
                 </div>
               </motion.div>
             ))}
@@ -402,7 +412,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: '#7C3AED' }}>
+      <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -415,19 +425,21 @@ const About = () => {
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
               Join Our Journey
             </h2>
-            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+            <p className="text-xl text-[#F5F7FA] mb-8 leading-relaxed">
               Be part of the movement transforming retail finance in Zimbabwe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-700 px-10 py-4 rounded-lg font-bold shadow-xl inline-flex items-center justify-center"
-              >
-                <a href="/contact">
-                Become an Agent
-                </a>
-              </motion.button>
+              
+                <motion.a
+                  href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20become%20an%20agent."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
+                >
+                  Become an Agent
+                </motion.a>
               
             </div>
           </motion.div>

@@ -171,7 +171,7 @@ export const COMPANY_INFO = {
   address: '63 Embassy Building, Aerodrome Road, Mutare, Zimbabwe',
   email: 'info@xash.network',
   supportEmail: 'support@xash.network',
-  phone: '+263 77 123 4567',
+  phone: '0779 325 039',
   registration: 'Private Limited Company registered in Zimbabwe',
   lastUpdated: '01 January 2026'
 };

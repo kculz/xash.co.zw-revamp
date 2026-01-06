@@ -22,32 +22,32 @@ const DataProtection = () => {
       icon: Lock,
       title: 'Lawful Processing',
       description: 'We process personal data only with valid legal basis and complete transparency.',
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       icon: Database,
       title: 'Purpose Limitation',
       description: 'Data collected for specific, explicit, and legitimate purposes only.',
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       icon: EyeOff,
       title: 'Data Minimization',
       description: 'Only collect data that is necessary for the intended purpose.',
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       icon: Server,
       title: 'Storage Limitation',
       description: 'Retain personal data only as long as necessary for its purpose.',
-      color: '#F59E0B'
+      color: '#F5B700'
     }
   ];
 
   const securityMeasures = [
     {
       category: 'Technical Safeguards',
-      color: '#7C3AED',
+      color: '#1F6AE1',
       icon: Shield,
       measures: [
         'End-to-end encryption for all transactions',
@@ -60,7 +60,7 @@ const DataProtection = () => {
     },
     {
       category: 'Organizational Measures',
-      color: '#2563EB',
+      color: '#0B3C5D',
       icon: UserCheck,
       measures: [
         'Employee training on data protection',
@@ -73,7 +73,7 @@ const DataProtection = () => {
     },
     {
       category: 'Infrastructure Security',
-      color: '#10B981',
+      color: '#F5B700',
       icon: Cloud,
       measures: [
         'Secure data backup and recovery',
@@ -91,25 +91,25 @@ const DataProtection = () => {
       type: 'Personal Information',
       examples: ['Name', 'Email', 'Phone number', 'Address', 'Date of birth'],
       retention: '7 years after account closure',
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       type: 'Financial Data',
       examples: ['Transaction history', 'Account balances', 'Payment methods', 'Bank details'],
       retention: '7 years (regulatory requirement)',
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       type: 'Technical Data',
       examples: ['IP address', 'Device information', 'Browser type', 'Login logs'],
       retention: '2 years',
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       type: 'Business Data',
       examples: ['Business registration', 'Tax documents', 'KYC documents', 'Contracts'],
       retention: '10 years',
-      color: '#F59E0B'
+      color: '#F5B700'
     }
   ];
 
@@ -118,37 +118,37 @@ const DataProtection = () => {
       right: 'Right to Access',
       description: 'Request a copy of your personal data we hold',
       icon: FileText,
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       right: 'Right to Rectification',
       description: 'Request correction of inaccurate or incomplete data',
       icon: CheckCircle,
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       right: 'Right to Erasure',
       description: 'Request deletion of your personal data (subject to legal obligations)',
       icon: EyeOff,
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       right: 'Right to Portability',
       description: 'Receive your data in a structured, machine-readable format',
       icon: Database,
-      color: '#F59E0B'
+      color: '#F5B700'
     },
     {
       right: 'Right to Object',
       description: 'Object to processing of your personal data in certain circumstances',
       icon: Shield,
-      color: '#6366F1'
+      color: '#1F6AE1'
     },
     {
       right: 'Right to Restriction',
       description: 'Request restriction of processing under certain conditions',
       icon: Lock,
-      color: '#7C3AED'
+      color: '#0B3C5D'
     }
   ];
 
@@ -162,7 +162,7 @@ const DataProtection = () => {
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -170,10 +170,10 @@ const DataProtection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-2xl mb-6 shadow-lg">
-                <Lock className="text-green-600" size={32} />
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#F5F7FA] rounded-2xl mb-6 shadow-lg border border-[#1F6AE1]/20">
+                <Lock className="text-[#1F6AE1]" size={32} />
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
                 Data Protection
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
@@ -194,12 +194,12 @@ const DataProtection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-blue-50 rounded-xl p-8 border border-blue-100"
+            className="bg-[#F5F7FA] rounded-xl p-8 border border-[#1F6AE1]/20"
           >
             <div className="flex items-start">
-              <Shield className="text-blue-600 mr-4 flex-shrink-0 mt-1" size={24} />
+              <Shield className="text-[#1F6AE1] mr-4 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Our Commitment</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Our Commitment</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Xash Solutions is committed to protecting your personal data in compliance with the Data Protection 
                   Act of Zimbabwe and international standards including GDPR principles. We implement comprehensive 
@@ -217,13 +217,13 @@ const DataProtection = () => {
       </section>
 
       {/* Data Protection Principles */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Core Principles
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Data Protection Principles</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Data Protection Principles</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               The fundamental principles guiding our data protection practices
             </p>
@@ -246,7 +246,7 @@ const DataProtection = () => {
                 >
                   <principle.icon className="text-white" size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">{principle.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{principle.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{principle.description}</p>
               </motion.div>
             ))}
@@ -258,10 +258,10 @@ const DataProtection = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Security Measures
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">How We Protect Your Data</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">How We Protect Your Data</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Comprehensive security measures to safeguard your information
             </p>
@@ -288,7 +288,7 @@ const DataProtection = () => {
                   <ul className="space-y-3">
                     {category.measures.map((measure, idx) => (
                       <li key={idx} className="flex items-start text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-[#F5B700] mr-2 mt-0.5 flex-shrink-0" />
                         {measure}
                       </li>
                     ))}
@@ -301,10 +301,10 @@ const DataProtection = () => {
       </section>
 
       {/* Data Types & Retention */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Data Types & Retention</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Data Types & Retention</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               What data we collect and how long we keep it
             </p>
@@ -328,8 +328,8 @@ const DataProtection = () => {
                     <Database className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{data.type}</h3>
-                    <div className="bg-gray-50 rounded-lg p-3 mb-3">
+                    <h3 className="text-xl font-bold text-[#1A1A1A] mb-2">{data.type}</h3>
+                    <div className="bg-[#F5F7FA] rounded-lg p-3 mb-3">
                       <p className="text-xs font-semibold text-gray-500 mb-2">Examples:</p>
                       <div className="flex flex-wrap gap-2">
                         {data.examples.map((example, idx) => (
@@ -375,7 +375,7 @@ const DataProtection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">
                 Enterprise-Grade Security
               </h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -384,23 +384,23 @@ const DataProtection = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#10B981' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle style={{ color: '#F5B700' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <h4 className="font-bold text-gray-900">24/7 Monitoring</h4>
+                    <h4 className="font-bold text-[#1A1A1A]">24/7 Monitoring</h4>
                     <p className="text-gray-600 text-sm">Continuous security monitoring and threat detection</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#2563EB' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle style={{ color: '#0B3C5D' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <h4 className="font-bold text-gray-900">Regular Audits</h4>
+                    <h4 className="font-bold text-[#1A1A1A]">Regular Audits</h4>
                     <p className="text-gray-600 text-sm">Independent security audits and compliance checks</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#7C3AED' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+                  <CheckCircle style={{ color: '#1F6AE1' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
                   <div>
-                    <h4 className="font-bold text-gray-900">Incident Response</h4>
+                    <h4 className="font-bold text-[#1A1A1A]">Incident Response</h4>
                     <p className="text-gray-600 text-sm">Rapid response team for security incidents</p>
                   </div>
                 </div>
@@ -411,13 +411,13 @@ const DataProtection = () => {
       </section>
 
       {/* Your Rights */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Your Rights
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Data Subject Rights</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Data Subject Rights</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               You have the following rights regarding your personal data
             </p>
@@ -440,13 +440,11 @@ const DataProtection = () => {
                 >
                   <item.icon className="text-white" size={24} />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.right}</h3>
+                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">{item.right}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
           </div>
-
-
         </div>
       </section>
 
@@ -461,20 +459,20 @@ const DataProtection = () => {
           >
             <div className="flex items-start mb-6">
               <div 
-                style={{ backgroundColor: '#EF4444' }}
+                style={{ backgroundColor: '#F5B700' }}
                 className="w-14 h-14 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg"
               >
                 <AlertCircle className="text-white" size={28} />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Breach Response</h2>
+                <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Data Breach Response</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
                   In the unlikely event of a data breach, we have comprehensive procedures in place to respond 
                   quickly and effectively to protect your information.
                 </p>
-                <div className="bg-red-50 rounded-lg p-4 border border-red-100">
-                  <h4 className="font-bold text-red-900 mb-3">Our Protocol:</h4>
-                  <ol className="space-y-2 text-red-800 text-sm">
+                <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-100">
+                  <h4 className="font-bold text-yellow-900 mb-3">Our Protocol:</h4>
+                  <ol className="space-y-2 text-yellow-800 text-sm">
                     <li className="flex items-start">
                       <span className="font-bold mr-2">1.</span>
                       <span>Immediate containment and assessment of the breach</span>
@@ -504,38 +502,38 @@ const DataProtection = () => {
       </section>
 
       {/* Contact DPO */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ backgroundColor: '#7C3AED' }}
+            style={{ backgroundColor: '#0B3C5D' }}
             className="rounded-xl shadow-2xl p-8 text-white"
           >
             <div className="text-center mb-8">
               <Shield className="w-16 h-16 mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">Data Protection Officer</h2>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-[#F5F7FA] leading-relaxed">
                 For any questions about data protection or to exercise your rights, contact our DPO
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Email</h3>
-                <p className="text-purple-100 text-sm">dpo@xash.co.zw</p>
+                <p className="text-[#F5F7FA] text-sm">dpo@xash.co.zw</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Phone</h3>
-                <p className="text-purple-100 text-sm">+263 123 456 789 (ext. 3)</p>
+                <p className="text-[#F5F7FA] text-sm">+263 123 456 789 (ext. 3)</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Response Time</h3>
-                <p className="text-purple-100 text-sm">Within 30 days</p>
+                <p className="text-[#F5F7FA] text-sm">Within 30 days</p>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-white/20 text-center">
-              <p className="text-purple-100 text-sm">
+              <p className="text-[#F5F7FA] text-sm">
                 <strong>Note:</strong> You have the right to lodge a complaint with the Data Protection Authority 
                 if you believe your rights have been violated.
               </p>

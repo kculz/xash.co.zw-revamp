@@ -18,27 +18,27 @@ const Home = () => {
       icon: Smartphone,
       title: 'Free POS Device',
       description: 'Qualifying retail shops receive a Xash POS device at zero cost. Start selling immediately.',
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       icon: Wallet,
       title: 'One Unified Balance',
       description: 'Manage airtime, bundles, and ZESA from a single float. No need for separate devices.',
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       icon: TrendingUp,
       title: 'Earn Daily Commission',
       description: 'Earn competitive commission on every transaction. Payouts processed weekly.',
-      color: '#10B981'
+      color: '#F5B700'
     }
   ];
 
   const STATS = [
-    { value: '500+', label: 'Active Agents', color: '#7C3AED' },
-    { value: '$2K+', label: 'Monthly Volume', color: '#2563EB' },
-    { value: '5K+', label: 'Daily Transactions', color: '#10B981' },
-    { value: '99.9%', label: 'System Uptime', color: '#F59E0B' }
+    { value: '500+', label: 'Active Agents', color: '#1F6AE1' },
+    { value: '$2K+', label: 'Monthly Volume', color: '#0B3C5D' },
+    { value: '5K+', label: 'Daily Transactions', color: '#F5B700' },
+    { value: '99.9%', label: 'System Uptime', color: '#1F6AE1' }
   ];
 
   const WHY_CHOOSE_XASH = [
@@ -46,29 +46,27 @@ const Home = () => {
       icon: Shield,
       title: 'Bank-Grade Security',
       description: 'Enterprise-grade encryption and security protocols protect every transaction',
-      color: '#7C3AED'
+      color: '#1F6AE1'
     },
     {
       icon: Smartphone,
       title: 'Real-time Processing',
       description: 'Instant transaction processing with immediate SMS confirmations',
-      color: '#2563EB'
+      color: '#0B3C5D'
     },
     {
       icon: Users,
       title: 'Local Zimbabwe Support',
       description: 'Based in Mutare with dedicated technical support team ready to assist',
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       icon: TrendingUp,
       title: 'Performance Analytics',
       description: 'Detailed reporting and analytics to monitor sales and earnings',
-      color: '#F59E0B'
+      color: '#1F6AE1'
     }
   ];
-
-  
 
   const PARTNERS = [
     { name: 'Econet Wireless', type: 'Network Partner', logo: econetLogo },
@@ -83,25 +81,25 @@ const Home = () => {
     { 
       name: 'Airtime', 
       icon: Phone, 
-      color: '#7C3AED',
+      color: '#1F6AE1',
       description: 'Sell airtime for all major networks: Econet, NetOne, Telecel'
     },
     { 
       name: 'Data Bundles', 
       icon: Wifi, 
-      color: '#2563EB',
+      color: '#0B3C5D',
       description: 'Econet data bundles for smartphones and devices'
     },
     { 
       name: 'ZETDC Tokens', 
       icon: Zap, 
-      color: '#F59E0B',
+      color: '#F5B700',
       description: 'Prepaid electricity tokens for ZESA customers'
     },
     { 
       name: 'Equal WiFi', 
       icon: Globe, 
-      color: '#6366F1',
+      color: '#1F6AE1',
       description: 'High-speed WiFi connectivity solutions'
     }
   ];
@@ -129,9 +127,9 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-sm font-medium mb-6"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-[#F5F7FA] border border-[#1F6AE1]/20 text-[#1F6AE1] text-sm font-medium mb-6"
               >
-                <span className="flex h-2 w-2 rounded-full bg-purple-600 mr-2"></span>
+                <span className="flex h-2 w-2 rounded-full bg-[#1F6AE1] mr-2"></span>
                 Zimbabwe's Trusted Fintech Partner
               </motion.div>
 
@@ -139,11 +137,11 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-[#1A1A1A]"
               >
                 Digital Payments
                 <br />
-                <span style={{ color: '#7C3AED' }}>
+                <span style={{ color: '#1F6AE1' }}>
                   Made Simple
                 </span>
               </motion.h1>
@@ -168,8 +166,8 @@ const Home = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ backgroundColor: '#7C3AED' }}
-                    className="group text-white px-8 py-4 rounded-lg font-semibold transition-all flex items-center justify-center shadow-lg"
+                    style={{ backgroundColor: '#1F6AE1' }}
+                    className="group text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center shadow-lg hover:bg-[#0B3C5D]"
                   >
                     Get Started
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -179,8 +177,8 @@ const Home = () => {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    style={{ borderColor: '#7C3AED', color: '#7C3AED' }}
-                    className="bg-white px-8 py-4 rounded-lg font-semibold border-2 transition-all shadow-lg"
+                    style={{ borderColor: '#1F6AE1', color: '#1F6AE1' }}
+                    className="bg-white px-6 py-3 rounded-lg font-semibold border-2 transition-all shadow-lg hover:border-[#0B3C5D] hover:text-[#0B3C5D]"
                   >
                     Explore Xash POS
                   </motion.button>
@@ -194,16 +192,16 @@ const Home = () => {
                 className="grid grid-cols-2 md:grid-cols-3 gap-4"
               >
                 <div className="flex items-center">
-                  <Building style={{ color: '#7C3AED' }} className="mr-2" size={18} />
-                  <span className="text-sm font-medium text-gray-700">Zimbabwe-Based</span>
+                  <Building style={{ color: '#1F6AE1' }} className="mr-2" size={18} />
+                  <span className="text-sm font-medium text-[#1A1A1A]">Zimbabwe-Based</span>
                 </div>
                 <div className="flex items-center">
-                  <Shield className="text-green-600 mr-2" size={18} />
-                  <span className="text-sm font-medium text-gray-700">Secure & Compliant</span>
+                  <Shield style={{ color: '#F5B700' }} className="mr-2" size={18} />
+                  <span className="text-sm font-medium text-[#1A1A1A]">Secure & Compliant</span>
                 </div>
                 <div className="flex items-center">
-                  <Target className="text-blue-600 mr-2" size={18} />
-                  <span className="text-sm font-medium text-gray-700">Retail-Focused</span>
+                  <Target style={{ color: '#0B3C5D' }} className="mr-2" size={18} />
+                  <span className="text-sm font-medium text-[#1A1A1A]">Retail-Focused</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -223,10 +221,10 @@ const Home = () => {
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm text-gray-600">Today's Earnings</span>
-                  <span style={{ color: '#10B981' }} className="text-2xl font-bold">+$45.20</span>
+                  <span style={{ color: '#F5B700' }} className="text-2xl font-bold">+$45.20</span>
                 </div>
                 <div className="flex items-center text-sm text-gray-500">
-                  <TrendingUp size={16} className="mr-1" style={{ color: '#10B981' }} />
+                  <TrendingUp size={16} className="mr-1" style={{ color: '#F5B700' }} />
                   <span>18% increase from yesterday</span>
                 </div>
               </div>
@@ -236,11 +234,11 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16" style={{ backgroundColor: '#7C3AED' }}>
+      <section className="py-16" style={{ backgroundColor: '#0B3C5D' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-white">Trusted by Retailers Across Zimbabwe</h2>
-            <p className="text-purple-100 max-w-2xl mx-auto">
+            <p className="text-[#F5F7FA] max-w-2xl mx-auto">
               Empowering small businesses with digital financial solutions
             </p>
           </div>
@@ -259,7 +257,7 @@ const Home = () => {
                   <div className="text-4xl md:text-5xl font-bold mb-2 text-white">
                     {stat.value}
                   </div>
-                  <div className="text-purple-100 text-sm font-medium">{stat.label}</div>
+                  <div className="text-[#F5F7FA] text-sm font-medium">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
@@ -268,10 +266,10 @@ const Home = () => {
       </section>
 
       {/* What You Can Sell */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#1A1A1A] mb-4">
               What You Can Sell
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -296,7 +294,7 @@ const Home = () => {
                 >
                   <product.icon className="text-white" size={32} />
                 </div>
-                <h4 className="font-bold text-gray-900 text-lg mb-2 text-center">{product.name}</h4>
+                <h4 className="font-bold text-[#1A1A1A] text-lg mb-2 text-center">{product.name}</h4>
                 <p className="text-gray-600 text-sm text-center">{product.description}</p>
               </motion.div>
             ))}
@@ -324,7 +322,7 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Empowering Local Businesses</h2>
+              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">Empowering Local Businesses</h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                 Join thousands of shop owners across Zimbabwe who are earning extra income by providing 
                 essential digital services to their communities.
@@ -334,7 +332,7 @@ const Home = () => {
                   <div key={index} className="flex items-start">
                     <CheckCircle style={{ color: feature.color }} className="mr-3 mt-1 flex-shrink-0" size={20} />
                     <div>
-                      <h4 className="font-bold text-gray-900">{feature.title}</h4>
+                      <h4 className="font-bold text-[#1A1A1A]">{feature.title}</h4>
                       <p className="text-gray-600 text-sm">{feature.description}</p>
                     </div>
                   </div>
@@ -346,10 +344,10 @@ const Home = () => {
       </section>
 
       {/* Why Choose Xash */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#1A1A1A] mb-4">
               Why Choose Xash?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -374,7 +372,7 @@ const Home = () => {
                 >
                   <item.icon className="text-white" size={28} />
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900">{item.title}</h3>
+                <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">{item.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
@@ -386,7 +384,7 @@ const Home = () => {
       <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-[#1A1A1A] mb-4">
               Trusted Partners
             </h2>
             <p className="text-xl text-gray-600">
@@ -407,7 +405,7 @@ const Home = () => {
                   alt={partner.name}
                   className="w-full h-24 object-cover rounded-lg mb-4"
                 />
-                <h4 className="font-bold text-gray-900 text-center">{partner.name}</h4>
+                <h4 className="font-bold text-[#1A1A1A] text-center">{partner.name}</h4>
                 <p className="text-gray-500 text-sm text-center">{partner.type}</p>
               </div>
             ))}
@@ -433,7 +431,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20" style={{ backgroundColor: '#7C3AED' }}>
+      <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6">
             <Star className="text-white" size={32} />
@@ -441,31 +439,23 @@ const Home = () => {
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
             Ready to Grow Your Business?
           </h2>
-          <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+          <p className="text-xl text-[#F5F7FA] mb-8 leading-relaxed">
             Join hundreds of retailers across Zimbabwe earning with Xash. Get your free POS device today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-700 px-8 py-4 rounded-lg font-semibold transition-all inline-flex items-center shadow-xl"
-              >
-                Apply for Free POS
-                <ArrowRight className="ml-2" size={20} />
-              </motion.button>
-            </Link>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all"
-              >
-                Request a Demo
-              </motion.button>
-            </Link>
+            <motion.a
+                              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20apply%20for%20a%20free%20PoS."
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
+                            >
+                              Apply for free PoS
+                            </motion.a>
+            
           </div>
-          <p className="text-purple-200 text-sm mt-6">
+          <p className="text-[#F5F7FA] text-sm mt-6">
             Based in Mutare • Zimbabwe-Registered • Fully Compliant
           </p>
         </div>

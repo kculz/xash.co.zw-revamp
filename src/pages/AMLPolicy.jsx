@@ -19,7 +19,7 @@ const AMLPolicy = () => {
     {
       icon: UserCheck,
       title: 'Customer Identification',
-      color: '#7C3AED',
+      color: '#1F6AE1',
       items: [
         'Valid government-issued ID (National ID or Passport)',
         'Proof of address (utility bill or bank statement)',
@@ -31,7 +31,7 @@ const AMLPolicy = () => {
     {
       icon: Flag,
       title: 'Risk Assessment',
-      color: '#2563EB',
+      color: '#0B3C5D',
       items: [
         'Customer risk profiling and categorization',
         'Transaction pattern monitoring and analysis',
@@ -43,7 +43,7 @@ const AMLPolicy = () => {
     {
       icon: Shield,
       title: 'Reporting Obligations',
-      color: '#10B981',
+      color: '#F5B700',
       items: [
         'Suspicious activity reports (SAR) to FIU',
         'Large transaction reporting (above $10,000)',
@@ -59,37 +59,37 @@ const AMLPolicy = () => {
       activity: 'Money Laundering',
       description: 'Transactions designed to conceal the origin of illegally obtained funds',
       severity: 'Critical',
-      color: '#EF4444'
+      color: '#0B3C5D'
     },
     {
       activity: 'Terrorist Financing',
       description: 'Providing funds or financial support to terrorist organizations',
       severity: 'Critical',
-      color: '#EF4444'
+      color: '#0B3C5D'
     },
     {
       activity: 'Structuring',
       description: 'Breaking large transactions into smaller ones to avoid reporting thresholds',
       severity: 'High',
-      color: '#F59E0B'
+      color: '#F5B700'
     },
     {
       activity: 'Identity Fraud',
       description: 'Use of false or stolen identities to open accounts or conduct transactions',
       severity: 'High',
-      color: '#F59E0B'
+      color: '#F5B700'
     },
     {
       activity: 'Shell Companies',
       description: 'Using fictitious businesses to hide beneficial ownership',
       severity: 'High',
-      color: '#F59E0B'
+      color: '#F5B700'
     },
     {
       activity: 'Sanctions Violations',
       description: 'Transactions with individuals or entities on sanctions lists',
       severity: 'Critical',
-      color: '#EF4444'
+      color: '#0B3C5D'
     }
   ];
 
@@ -119,19 +119,19 @@ const AMLPolicy = () => {
       level: 'Level 1 - Basic',
       requirements: ['National ID or Passport', 'Phone number verification', 'Basic information'],
       limits: 'Up to $500 daily',
-      color: '#10B981'
+      color: '#F5B700'
     },
     {
       level: 'Level 2 - Standard',
       requirements: ['Proof of address', 'Bank account details', 'Source of funds declaration'],
       limits: 'Up to $2,000 daily',
-      color: '#2563EB'
+      color: '#1F6AE1'
     },
     {
       level: 'Level 3 - Enhanced',
       requirements: ['Business registration', 'Tax certificates', 'Financial statements', 'Enhanced due diligence'],
       limits: 'Up to $5,000 daily',
-      color: '#7C3AED'
+      color: '#0B3C5D'
     }
   ];
 
@@ -145,7 +145,7 @@ const AMLPolicy = () => {
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
+      <section className="py-20 bg-gradient-to-br from-[#F5F7FA] to-[#0B3C5D]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
@@ -153,10 +153,10 @@ const AMLPolicy = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-2xl mb-6 shadow-lg">
-                <Shield className="text-red-600" size={32} />
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#F5F7FA] rounded-2xl mb-6 shadow-lg border border-[#1F6AE1]/20">
+                <Shield className="text-[#1F6AE1]" size={32} />
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
                 AML/KYC Policy
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
@@ -178,12 +178,12 @@ const AMLPolicy = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-blue-50 rounded-xl p-8 border border-blue-100"
+            className="bg-[#F5F7FA] rounded-xl p-8 border border-[#1F6AE1]/20"
           >
             <div className="flex items-start">
-              <Scale className="text-blue-600 mr-4 flex-shrink-0 mt-1" size={24} />
+              <Scale className="text-[#1F6AE1] mr-4 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Policy Statement</h3>
+                <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">Policy Statement</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Xash Solutions is committed to preventing money laundering, terrorist financing, and other 
                   financial crimes. We comply with all applicable regulations including the Bank Use Promotion Act, 
@@ -201,13 +201,13 @@ const AMLPolicy = () => {
       </section>
 
       {/* Requirements */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Compliance Requirements
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">AML/KYC Requirements</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">AML/KYC Requirements</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Essential procedures we follow to ensure compliance
             </p>
@@ -229,11 +229,11 @@ const AMLPolicy = () => {
                 >
                   <req.icon className="text-white" size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{req.title}</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">{req.title}</h3>
                 <ul className="space-y-3">
                   {req.items.map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-[#F5B700] mr-3 mt-1 flex-shrink-0" />
                       <span className="text-gray-600 text-sm">{item}</span>
                     </li>
                   ))}
@@ -244,16 +244,14 @@ const AMLPolicy = () => {
         </div>
       </section>
 
-
-
       {/* Prohibited Activities */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
               Strictly Prohibited
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Prohibited Activities</h2>
+            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Prohibited Activities</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Activities that will result in immediate account suspension and reporting
             </p>
@@ -277,7 +275,7 @@ const AMLPolicy = () => {
                       size={24} 
                     />
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">{item.activity}</h3>
+                      <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">{item.activity}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -299,13 +297,13 @@ const AMLPolicy = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-8 bg-red-50 rounded-xl p-6 border border-red-200"
+            className="mt-8 bg-[#F5F7FA] rounded-xl p-6 border border-[#1F6AE1]/20"
           >
             <div className="flex items-start">
-              <AlertTriangle className="text-red-600 mr-4 flex-shrink-0 mt-1" size={24} />
+              <AlertTriangle className="text-[#1F6AE1] mr-4 flex-shrink-0 mt-1" size={24} />
               <div>
-                <h4 className="font-bold text-red-900 mb-2">Consequences of Violations</h4>
-                <p className="text-red-800 text-sm leading-relaxed">
+                <h4 className="font-bold text-[#1A1A1A] mb-2">Consequences of Violations</h4>
+                <p className="text-gray-700 text-sm leading-relaxed">
                   Engaging in any prohibited activities will result in immediate account suspension, 
                   transaction reversal, reporting to relevant authorities (including FIU and law enforcement), 
                   and potential legal action. We have zero tolerance for financial crimes.
@@ -316,10 +314,8 @@ const AMLPolicy = () => {
         </div>
       </section>
 
-
-
       {/* Monitoring & Reporting */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -339,7 +335,7 @@ const AMLPolicy = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">
                 Transaction Monitoring
               </h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -349,9 +345,9 @@ const AMLPolicy = () => {
               <div className="space-y-4">
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-start">
-                    <Eye style={{ color: '#7C3AED' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
+                    <Eye style={{ color: '#1F6AE1' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Real-time Monitoring</h4>
+                      <h4 className="font-bold text-[#1A1A1A] mb-2">Real-time Monitoring</h4>
                       <p className="text-gray-600 text-sm">
                         AI-powered systems analyze every transaction for suspicious patterns
                       </p>
@@ -360,9 +356,9 @@ const AMLPolicy = () => {
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-start">
-                    <Flag style={{ color: '#2563EB' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
+                    <Flag style={{ color: '#0B3C5D' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Automated Alerts</h4>
+                      <h4 className="font-bold text-[#1A1A1A] mb-2">Automated Alerts</h4>
                       <p className="text-gray-600 text-sm">
                         Instant notifications to compliance team for manual review
                       </p>
@@ -371,9 +367,9 @@ const AMLPolicy = () => {
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                   <div className="flex items-start">
-                    <FileText style={{ color: '#10B981' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
+                    <FileText style={{ color: '#F5B700' }} className="mr-4 flex-shrink-0 mt-1" size={24} />
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Comprehensive Reporting</h4>
+                      <h4 className="font-bold text-[#1A1A1A] mb-2">Comprehensive Reporting</h4>
                       <p className="text-gray-600 text-sm">
                         Detailed records maintained for regulatory compliance
                       </p>
@@ -387,34 +383,34 @@ const AMLPolicy = () => {
       </section>
 
       {/* Compliance Officer Contact */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F7FA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ backgroundColor: '#7C3AED' }}
+            style={{ backgroundColor: '#0B3C5D' }}
             className="rounded-xl shadow-2xl p-8 text-white"
           >
             <div className="text-center mb-8">
               <Lock className="w-16 h-16 mx-auto mb-4" />
               <h2 className="text-3xl font-bold mb-4">Report Suspicious Activity</h2>
-              <p className="text-purple-100 leading-relaxed">
+              <p className="text-[#F5F7FA] leading-relaxed">
                 For AML/KYC inquiries or to report suspicious activity, contact our Compliance Officer
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Compliance Officer</h3>
-                <p className="text-purple-100 text-sm">compliance@xash.co.zw</p>
+                <p className="text-[#F5F7FA] text-sm">compliance@xash.co.zw</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-bold mb-3">Hotline</h3>
-                <p className="text-purple-100 text-sm">+263 123 456 789 (ext. 2)</p>
+                <p className="text-[#F5F7FA] text-sm">+263 123 456 789 (ext. 2)</p>
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-white/20 text-center">
-              <p className="text-purple-100 text-sm">
+              <p className="text-[#F5F7FA] text-sm">
                 <strong>Confidentiality:</strong> All reports are confidential and protected by law. 
                 Whistleblowers are protected from retaliation.
               </p>
