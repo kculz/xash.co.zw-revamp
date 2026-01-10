@@ -362,54 +362,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center px-5 py-2 rounded-full bg-[#F5F7FA] text-[#F5B700] text-sm font-semibold mb-6 border border-[#F5B700]/20">
-              <Users className="mr-2" size={16} />
-              Meet the Team
-            </div>
-            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experienced professionals driving our vision forward
-            </p>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-3xl border-2 border-gray-100 shadow-2xl overflow-hidden hover:shadow-3xl hover:border-[#1F6AE1]/30 transition-all group"
-              >
-                <div className="relative overflow-hidden h-80">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-4xl font-bold mb-4 text-[#1A1A1A]">{member.name}</h3>
-                  <div className="text-[#1F6AE1] font-bold text-lg mb-4">{member.role}</div>
-                  <p className="text-gray-600 leading-relaxed text-lg">{member.bio}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>

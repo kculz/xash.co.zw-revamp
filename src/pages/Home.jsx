@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe } from 'lucide-react';
+import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe, Quote } from 'lucide-react';
 import econetLogo from '../assets/partners/econet.png';
 import netoneLogo from '../assets/partners/netone.svg';
 import telecelLogo from '../assets/partners/telecel.jpeg';
@@ -75,6 +75,49 @@ const Home = () => {
     { name: 'ZETDC', type: 'Utility Partner', logo: zesaLogo },
     { name: 'Reserve Bank', type: 'Regulatory', logo: rbzLogo },
     { name: 'InnBucks', type: 'Payment Partner', logo: innbucksLogo },
+  ];
+
+  const TESTIMONIALS = [
+    {
+      name: 'Tinashe M.',
+      role: 'Shop Owner',
+      location: 'Mutare CBD',
+      content: 'The Xash POS has transformed my business. I earn commission daily and my customers love the convenience. The support team is always available to help.',
+      rating: 5,
+      business: 'Quick Mart'
+    },
+    {
+      name: 'Sarah K.',
+      role: 'Retailer',
+      location: 'Harare',
+      content: "Switching to Xash was the best decision for my shop. The unified balance for airtime, data, and ZESA makes management so much easier. Highly recommended!",
+      rating: 5,
+      business: 'City Corner Store'
+    },
+    {
+      name: 'Blessing C.',
+      role: 'Business Owner',
+      location: 'Bulawayo',
+      content: "As a small business owner, the additional income from commissions has been life-changing. The device is reliable and the team provides excellent training.",
+      rating: 5,
+      business: 'Family Groceries'
+    },
+    {
+      name: 'Takudzwa M.',
+      role: 'Agent',
+      location: 'Gweru',
+      content: "I've been using Xash for 6 months and the earnings have been consistent. The weekly payouts are reliable and the system is very user-friendly.",
+      rating: 4,
+      business: 'Tech Hub Shop'
+    },
+    {
+      name: 'Grace N.',
+      role: 'Supermarket Owner',
+      location: 'Masvingo',
+      content: "My customers appreciate the one-stop-shop for all their digital needs. The free POS device and training made it easy to get started. Excellent service!",
+      rating: 5,
+      business: 'Metro Supermarket'
+    }
   ];
 
   const PRODUCTS = [
@@ -380,7 +423,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
+      {/* Partners Section - Fixed logo sizes */}
       <section className="py-20 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="text-center">
@@ -400,11 +443,13 @@ const Home = () => {
                 key={index}
                 className="flex-shrink-0 mx-6 bg-white rounded-xl shadow-lg p-6 w-64"
               >
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name}
-                  className="w-full h-24 object-cover rounded-lg mb-4"
-                />
+                <div className="w-full h-20 flex items-center justify-center mb-4">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain rounded-lg"
+                  />
+                </div>
                 <h4 className="font-bold text-[#1A1A1A] text-center">{partner.name}</h4>
                 <p className="text-gray-500 text-sm text-center">{partner.type}</p>
               </div>
@@ -430,6 +475,99 @@ const Home = () => {
         `}</style>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#1A1A1A] mb-4">
+              What Our Partners Say
+            </h2>
+            <p className="text-xl text-gray-600">
+              Hear from shop owners across Zimbabwe
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {TESTIMONIALS.slice(0, 3).map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-100"
+              >
+                <div className="mb-4">
+                  <Quote className="text-[#0B3C5D] opacity-30 mb-3" size={24} />
+                  <p className="text-gray-600 italic">"{testimonial.content}"</p>
+                </div>
+                
+                <div className="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
+                  <div>
+                    <h4 className="font-bold text-[#1A1A1A]">{testimonial.name}</h4>
+                    <p className="text-gray-500 text-sm">{testimonial.role}, {testimonial.location}</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="flex items-center mb-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          size={16} 
+                          fill={i < testimonial.rating ? "#F5B700" : "#E5E7EB"} 
+                          color={i < testimonial.rating ? "#F5B700" : "#E5E7EB"}
+                        />
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-500">{testimonial.business}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Additional 2 testimonials in a different layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+            {TESTIMONIALS.slice(3, 5).map((testimonial, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (index + 3) * 0.1 }}
+                className="bg-gradient-to-r from-[#1F6AE1]/5 to-[#0B3C5D]/5 p-6 rounded-xl border border-[#1F6AE1]/10"
+              >
+                <div className="flex items-start">
+                  <div className="bg-white rounded-full p-3 mr-4 shadow-sm">
+                    <Quote className="text-[#1F6AE1]" size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-gray-700 mb-4">"{testimonial.content}"</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <h4 className="font-bold text-[#1A1A1A]">{testimonial.name}</h4>
+                        <p className="text-gray-500 text-sm">{testimonial.role} • {testimonial.business}</p>
+                      </div>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            size={14} 
+                            fill={i < testimonial.rating ? "#F5B700" : "#E5E7EB"} 
+                            color={i < testimonial.rating ? "#F5B700" : "#E5E7EB"}
+                            className="ml-0.5"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -444,15 +582,15 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-                              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20apply%20for%20a%20free%20PoS."
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
-                            >
-                              Apply for free PoS
-                            </motion.a>
+              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20apply%20for%20a%20free%20PoS."
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
+            >
+              Apply for free PoS
+            </motion.a>
             
           </div>
           <p className="text-[#F5F7FA] text-sm mt-6">
