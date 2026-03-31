@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sora:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -32,15 +32,51 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b5cf6;
+  background: #1F6AE1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: #0B3C5D;
+}
+
+/* Glassmorphism Utilities */
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+}
+
+.glass-panel {
+  @apply bg-white/90 backdrop-blur-2xl border border-white/40 shadow-2xl;
+}
+
+.glass-nav {
+  @apply bg-white/80 backdrop-blur-md;
+}
+
+/* Background Mesh Gradients */
+.bg-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(31, 106, 225, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(230, 126, 34, 0.08) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(11, 60, 93, 0.1) 0, transparent 50%);
+}
+
+.bg-mesh-dark {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(31, 106, 225, 0.2) 0, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(211, 84, 0, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(11, 60, 93, 0.3) 0, transparent 50%);
+}
+
+.bg-sunset {
+  background: linear-gradient(135deg, rgba(31,106,225,1) 0%, rgba(11,60,93,1) 40%, rgba(211,84,0,0.8) 100%);
 }
 
 /* Smooth transitions */
 * {
-  @apply transition-colors duration-200;
+  @apply transition-all duration-300 ease-in-out;
 }

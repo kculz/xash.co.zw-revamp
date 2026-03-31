@@ -13,10 +13,11 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
-import about from '../assets/images/about.jpeg';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+
+const about = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80";
 
 const About = () => {
   const values = [
@@ -135,24 +136,28 @@ const About = () => {
         <meta name="description" content="Learn about Xash, Zimbabwe's trusted fintech partner, and our mission to make digital financial services accessible to every retail business." /> 
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-mesh relative overflow-hidden">
+        {/* Ambient Glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-blue-500/10 rounded-full filter blur-3xl animate-blob" />
+          <div className="absolute top-1/2 -left-24 w-[400px] h-[400px] bg-orange-500/10 rounded-full filter blur-3xl animate-pulse-slow" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
-                About Us
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/50 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-xash-primary-blue mr-2"></span>
+                Our Identity
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
-                Building the Future of <br />
-                <span style={{ color: '#1F6AE1' }}>Retail Finance</span> in Zimbabwe
+              <h1 className="text-5xl md:text-7xl font-bold font-sora mb-6 text-xash-dark-text tracking-tight">
+                Empowering <span className="bg-gradient-to-r from-xash-primary-blue to-xash-secondary-blue bg-clip-text text-transparent">Zimbabwean Retail</span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                We're on a mission to make digital financial services accessible to every retail business, 
-                one transaction at a time.
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-outfit">
+                At Xash, we believe financial inclusion is the cornerstone of economic growth. We're building the infrastructure that connects local shops to the digital economy.
               </p>
             </motion.div>
           </div>
@@ -170,11 +175,11 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#F5F7FA] rounded-xl shadow-lg p-6 text-center border border-gray-100"
+                className="glass-card hover:glass-panel rounded-2xl p-8 text-center transition-all duration-300"
               >
-                <div className="text-4xl font-bold mb-2 text-[#1A1A1A]">{stat.value}</div>
-                <div className="text-lg font-semibold text-[#1F6AE1] mb-1">{stat.label}</div>
-                <div className="text-sm text-gray-500">{stat.sublabel}</div>
+                <div className="text-4xl font-bold mb-2 font-sora text-xash-dark-text">{stat.value}</div>
+                <div className="text-lg font-bold text-xash-primary-blue mb-1 font-outfit">{stat.label}</div>
+                <div className="text-sm text-gray-500 font-outfit">{stat.sublabel}</div>
               </motion.div>
             ))}
           </div>
@@ -192,8 +197,8 @@ const About = () => {
             >
               <ImageWithSkeleton 
                 src={about}
-                alt="Office Building"
-                className="w-full h-64 rounded-lg shadow-md"
+                alt="Xash Team Working"
+                className="w-full h-[400px] object-cover rounded-3xl shadow-2xl border-4 border-white/50"
               />
             </motion.div>
 
@@ -257,17 +262,17 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-all"
+                whileHover={{ y: -10 }}
+                className="glass-card hover:glass-panel p-8 rounded-3xl transition-all duration-500 group"
               >
                 <div 
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500`}
                   style={{ backgroundColor: value.color }}
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 shadow-lg"
                 >
-                  <value.icon className="text-white" size={28} />
+                  <value.icon className="text-white" size={32} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-bold mb-4 font-sora text-xash-dark-text">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-outfit">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -303,22 +308,21 @@ const About = () => {
                   } flex-col`}
                 >
                   {/* Timeline Dot */}
-                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#1F6AE1] border-4 border-white shadow-lg z-10"></div>
+                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-xash-primary-blue border-4 border-white shadow-xl z-10 animate-pulse-slow"></div>
                   
                   {/* Content */}
-                  <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-12 lg:text-right' : 'lg:pl-12'}`}>
-                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-lg">
-                      <div className="flex items-center gap-4 mb-3 justify-start lg:justify-end">
+                  <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-16 lg:text-right' : 'lg:pl-16'}`}>
+                    <div className="glass-panel p-8 rounded-3xl hover:shadow-2xl transition-all duration-300">
+                      <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? 'lg:justify-end' : 'justify-start'}`}>
                         <div 
-                          style={{ backgroundColor: '#1F6AE1' }}
-                          className="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
+                          className="w-14 h-14 rounded-2xl bg-xash-primary-blue flex items-center justify-center shadow-lg"
                         >
-                          <milestone.icon className="w-6 h-6 text-white" />
+                          <milestone.icon className="w-7 h-7 text-white" />
                         </div>
-                        <div className="text-3xl font-bold text-[#1F6AE1]">{milestone.year}</div>
+                        <div className="text-4xl font-bold font-sora text-xash-primary-blue">{milestone.year}</div>
                       </div>
-                      <div className="text-xl font-bold text-[#1A1A1A] mb-2">{milestone.event}</div>
-                      <p className="text-gray-600">{milestone.description}</p>
+                      <div className="text-2xl font-bold font-sora text-xash-dark-text mb-3">{milestone.event}</div>
+                      <p className="text-gray-600 font-outfit leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -365,35 +369,34 @@ const About = () => {
 
 
       {/* CTA */}
-      <section className="py-20" style={{ backgroundColor: '#0B3C5D' }}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="py-24 bg-mesh-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6">
-              <Star className="text-white" size={32} />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl mb-8 border border-white/20">
+              <Star className="text-xash-accent-gold" size={40} />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl sm:text-6xl font-bold font-sora mb-8 text-white tracking-tight">
               Join Our Journey
             </h2>
-            <p className="text-xl text-[#F5F7FA] mb-8 leading-relaxed">
-              Be part of the movement transforming retail finance in Zimbabwe.
+            <p className="text-xl text-[#F5F7FA]/90 mb-12 leading-relaxed font-outfit max-w-2xl mx-auto">
+              Be part of the movement transforming retail finance in Zimbabwe. We are always looking for visionary partners and agents.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.a
                   href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20become%20an%20agent."
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
+                  className="bg-xash-accent-gold text-xash-primary-blue px-10 py-5 rounded-2xl font-bold shadow-2xl inline-flex items-center justify-center hover:bg-white transition-all transform hover:-translate-y-1"
                 >
                   Become an Agent
                 </motion.a>
-              
             </div>
           </motion.div>
         </div>

@@ -14,6 +14,7 @@ import {
   Zap
 } from 'lucide-react';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 // MapSection Component (embedded)
 import { useEffect, useRef } from 'react';
@@ -235,9 +236,18 @@ const Contact = () => {
 
   return (
     <div className="pt-20 bg-white">
-      {/* Hero Section - Asymmetric Design */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#F5F7FA] to-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Helmet>
+        <title>Contact Us - Xash</title>
+        <meta name="description" content="Get in touch with Xash. We're here to help you with all your fintech needs." />
+      </Helmet>
+      {/* Hero Section - Premium Design */}
+      <section className="relative overflow-hidden bg-mesh py-24">
+        {/* Ambient Glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-xash-primary-blue/10 rounded-full filter blur-3xl animate-blob" />
+          <div className="absolute bottom-0 -left-24 w-[400px] h-[400px] bg-xash-accent-gold/10 rounded-full filter blur-3xl animate-pulse-slow" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
@@ -245,32 +255,32 @@ const Contact = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-[#1F6AE1]/20 text-[#1F6AE1] text-sm font-medium mb-6 shadow-sm"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6"
               >
-                <span className="flex h-2 w-2 rounded-full bg-[#1F6AE1] mr-2 animate-pulse"></span>
+                <span className="flex h-2 w-2 rounded-full bg-xash-primary-blue mr-2 animate-pulse"></span>
                 We're Here to Help
-              </motion.div>
+              </motion.span>
               
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+                className="text-5xl sm:text-7xl font-bold font-sora leading-tight mb-6 text-xash-dark-text tracking-tight"
               >
-                <span className="text-[#1A1A1A]">Let's Connect</span>
+                Let's Connect
                 <br />
-                <span className="text-[#1F6AE1]">& Grow Together</span>
+                <span className="bg-gradient-to-r from-xash-primary-blue to-xash-accent-gold bg-clip-text text-transparent">&amp; Grow Together</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-600 leading-relaxed mb-8"
+                className="text-xl text-gray-600 font-outfit leading-relaxed mb-10"
               >
                 Your success is our priority. Reach out through any channel and experience 
                 support that truly understands your business needs.
@@ -282,22 +292,22 @@ const Contact = () => {
                 transition={{ delay: 0.5 }}
                 className="flex flex-wrap gap-6"
               >
-                <div className="flex items-center space-x-2 text-[#1A1A1A]">
-                  <div className="w-10 h-10 rounded-lg bg-[#1F6AE1]/10 flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-[#1F6AE1]" />
+                <div className="flex items-center space-x-3 glass-panel px-5 py-3 rounded-2xl">
+                  <div className="w-10 h-10 rounded-xl bg-xash-primary-blue/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-xash-primary-blue" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold">Quick Response</p>
-                    <p className="text-xs text-gray-600">Within 24 hours</p>
+                    <p className="text-sm font-bold font-sora text-xash-dark-text">Quick Response</p>
+                    <p className="text-xs text-gray-500 font-outfit">Within 24 hours</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2 text-[#1A1A1A]">
-                  <div className="w-10 h-10 rounded-lg bg-[#F5B700]/10 flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-[#F5B700]" />
+                <div className="flex items-center space-x-3 glass-panel px-5 py-3 rounded-2xl">
+                  <div className="w-10 h-10 rounded-xl bg-xash-accent-gold/10 flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold">Fully Compliant</p>
-                    <p className="text-xs text-gray-600">Zimbabwe Registered</p>
+                    <p className="text-sm font-bold font-sora text-xash-dark-text">Fully Compliant</p>
+                    <p className="text-xs text-gray-500 font-outfit">Zimbabwe Registered</p>
                   </div>
                 </div>
               </motion.div>
@@ -319,59 +329,47 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileHover={{ scale: 1.04, y: -6 }}
                     onHoverStart={() => setHoveredCard(index)}
                     onHoverEnd={() => setHoveredCard(null)}
-                    className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 cursor-pointer transition-all hover:shadow-2xl text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1F6AE1]"
-                    style={{
-                      borderTopColor: hoveredCard === index ? info.color : undefined,
-                      borderTopWidth: hoveredCard === index ? '3px' : '1px'
-                    }}
+                    className="glass-panel rounded-3xl p-6 cursor-pointer transition-all hover:shadow-2xl text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-xash-primary-blue border border-white/60"
                   >
                     <div 
                       style={{ backgroundColor: info.color }}
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-md"
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-lg"
                     >
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold mb-2 text-[#1A1A1A]">{info.title}</h3>
+                    <h3 className="text-lg font-bold mb-2 font-sora text-xash-dark-text">{info.title}</h3>
                     <div className="space-y-1 mb-3">
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-sm text-gray-700 font-medium">{detail}</p>
+                        <p key={idx} className="text-sm text-gray-700 font-outfit font-medium">{detail}</p>
                       ))}
                     </div>
-                    <p className="text-xs text-gray-500">{info.description}</p>
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="mt-3 pt-3 border-t border-gray-100"
-                    >
+                    <p className="text-xs text-gray-500 font-outfit">{info.description}</p>
+                    <div className="mt-3 pt-3 border-t border-gray-100">
                       <div 
-                        className="text-xs font-semibold flex items-center"
+                        className="text-xs font-bold flex items-center font-outfit"
                         style={{ color: info.color }}
                       >
                         {info.action}
                         <ArrowRight className="ml-1" size={12} />
                       </div>
-                    </motion.div>
+                    </div>
                   </motion.button>
                 ))}
               </div>
             </motion.div>
           </div>
         </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#1F6AE1]/5 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F5B700]/5 rounded-full blur-3xl -z-10"></div>
       </section>
 
       {/* Map and Office Hours Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Visit Our Office</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-4 text-xash-dark-text">Visit Our Office</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-outfit">
               Located in the heart of Mutare, we're easy to find and always ready to welcome you
             </p>
           </div>
@@ -393,18 +391,17 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+              className="glass-panel rounded-3xl p-8 border border-white/60"
             >
               <div className="flex items-center mb-6">
                 <div 
-                  style={{ backgroundColor: '#F5B700' }}
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mr-4 shadow-lg"
+                  className="w-14 h-14 rounded-2xl bg-xash-accent-gold flex items-center justify-center mr-4 shadow-lg"
                 >
                   <Clock className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1A1A1A]">Office Hours</h3>
-                  <p className="text-sm text-gray-600">When we're available</p>
+                  <h3 className="text-2xl font-bold font-sora text-xash-dark-text">Office Hours</h3>
+                  <p className="text-sm text-gray-500 font-outfit">When we're available</p>
                 </div>
               </div>
 
@@ -451,27 +448,24 @@ const Contact = () => {
 
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0B3C5D' }}>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#1F6AE1] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#F5B700] rounded-full blur-3xl"></div>
-        </div>
+      <section className="py-24 bg-mesh-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none"></div>
         
         <div className="max-w-5xl mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl mb-6"
+            className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl mb-8 border border-white/20"
           >
-            <Star className="text-white" size={32} />
+            <Star className="text-xash-accent-gold" size={36} />
           </motion.div>
           
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight"
+            className="text-4xl sm:text-6xl font-bold font-sora mb-8 text-white tracking-tight"
           >
             Ready to Transform Your Business?
           </motion.h2>
@@ -481,7 +475,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto"
+            className="text-xl text-white/80 font-outfit mb-12 leading-relaxed max-w-3xl mx-auto"
           >
             Join hundreds of businesses across Zimbabwe who trust Xash for their fintech needs. 
             Let's build something amazing together.
@@ -492,33 +486,31 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
+            className="flex flex-col sm:flex-row gap-6 justify-center mb-6"
           >
-            
-            
             <motion.button
               onClick={() => handleCTAAction('call')}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-xl font-bold text-base transition-all hover:bg-white/10 inline-flex items-center justify-center"
+              className="bg-xash-accent-gold text-xash-primary-blue px-10 py-5 rounded-2xl font-bold shadow-2xl inline-flex items-center justify-center hover:bg-white transition-all"
             >
-              <Phone className="mr-2" size={18} />
+              <Phone className="mr-2" size={20} />
               Call Us Now
             </motion.button>
           </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/80">
-            <div className="flex items-center">
+          <div className="flex flex-wrap items-center justify-center gap-8 text-white/60">
+            <div className="flex items-center font-outfit text-sm">
               <MapPin className="mr-2" size={16} />
-              <span className="text-sm">Based in Mutare</span>
+              <span>Based in Mutare</span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center font-outfit text-sm">
               <Shield className="mr-2" size={16} />
-              <span className="text-sm">Zimbabwe Registered</span>
+              <span>Zimbabwe Registered</span>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center font-outfit text-sm">
               <Star className="mr-2" size={16} />
-              <span className="text-sm">Fully Compliant</span>
+              <span>Fully Compliant</span>
             </div>
           </div>
         </div>

@@ -321,41 +321,46 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative py-24 bg-mesh-dark overflow-hidden">
+        {/* Ambient Glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-32 w-[600px] h-[600px] bg-xash-primary-blue/20 rounded-full filter blur-3xl animate-blob" />
+          <div className="absolute bottom-0 -left-32 w-[500px] h-[500px] bg-xash-accent-gold/10 rounded-full filter blur-3xl animate-pulse-slow" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center px-4 py-2 bg-[#F5F7FA] rounded-full text-[#1F6AE1] text-sm font-semibold mb-6 border border-[#1F6AE1]/20">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xash-accent-gold text-sm font-bold mb-6">
                 <Code2 className="w-4 h-4 mr-2" />
                 Xash Vend API
-              </div>
-              <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-[#1A1A1A]">
-                Build with <span style={{ color: '#1F6AE1' }}>Xash Vend API</span>
+              </span>
+              <h1 className="text-5xl sm:text-7xl font-bold font-sora mb-6 text-white tracking-tight">
+                Build with <span className="bg-gradient-to-r from-xash-primary-blue to-xash-accent-gold bg-clip-text text-transparent">Xash Vend API</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-white/70 font-outfit mb-10 leading-relaxed">
                 Powerful, secure API for integrating diverse vending services into your applications. 
                 Seamlessly handle mobile airtime, data bundles, WiFi vouchers, and electricity tokens.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#F5B700' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">RESTful API with JSON responses and Bearer token authentication</span>
+                  <CheckCircle className="text-xash-accent-gold mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-white/80 font-outfit">RESTful API with JSON responses and Bearer token authentication</span>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#F5B700' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Comprehensive documentation at docs.xash.co.zw with code samples</span>
+                  <CheckCircle className="text-xash-accent-gold mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-white/80 font-outfit">Comprehensive documentation at docs.xash.co.zw with code samples</span>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#F5B700' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Wallet management with automatic commission calculation</span>
+                  <CheckCircle className="text-xash-accent-gold mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-white/80 font-outfit">Wallet management with automatic commission calculation</span>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle style={{ color: '#F5B700' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
-                  <span className="text-gray-700">Webhook support for real-time transaction updates</span>
+                  <CheckCircle className="text-xash-accent-gold mr-3 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-white/80 font-outfit">Webhook support for real-time transaction updates</span>
                 </div>
               </div>
             </motion.div>
@@ -365,21 +370,27 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="bg-[#0B3C5D] rounded-2xl p-8 shadow-2xl">
+              <div className="bg-xash-primary-blue/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl border border-white/10">
                 <div className="flex items-center mb-6">
-                  <Terminal className="text-[#F5B700] mr-3" size={24} />
-                  <h3 className="text-xl font-bold text-white">Quick Start Example</h3>
+                  <div className="flex space-x-2 mr-4">
+                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                  </div>
+                  <Terminal className="text-xash-accent-gold mr-2" size={18} />
+                  <h3 className="text-sm font-bold text-white/80 font-outfit">Quick Start Example</h3>
                 </div>
-                <pre className="text-sm text-gray-300 overflow-x-auto">
+                <pre className="text-sm text-green-300 overflow-x-auto font-mono leading-relaxed">
                   <code>{codeExample}</code>
                 </pre>
                 <a 
                   href="https://docs.xash.co.zw" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#F5B700] text-sm font-medium hover:text-[#F5B700]/80 transition-colors mt-4 inline-flex items-center"
+                  className="text-xash-accent-gold text-sm font-medium hover:text-white transition-colors mt-5 inline-flex items-center font-outfit"
                 >
-                  View full documentation at docs.xash.co.zw →
+                  View full documentation at docs.xash.co.zw
+                  <ArrowRight className="ml-2" size={14} />
                 </a>
               </div>
             </motion.div>
@@ -429,14 +440,14 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
       </section>
 
       {/* API Endpoints by Category */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section className="py-24 bg-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6">
               API Reference
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">API Endpoints</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold font-sora mb-4 text-xash-dark-text">API Endpoints</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-outfit">
               Complete suite of endpoints for all vending services
             </p>
           </div>
@@ -449,18 +460,18 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: categoryIndex * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
+                className="glass-panel rounded-3xl p-8 shadow-lg"
               >
                 <div className="flex items-center mb-8">
                   <div 
                     style={{ backgroundColor: category.color }}
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mr-4"
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center mr-4 shadow-lg"
                   >
-                    <category.icon className="text-white" size={24} />
+                    <category.icon className="text-white" size={28} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-[#1A1A1A]">{category.title}</h3>
-                    <p className="text-gray-600">Endpoints for {category.title.toLowerCase()} services</p>
+                    <h3 className="text-2xl font-bold font-sora text-xash-dark-text">{category.title}</h3>
+                    <p className="text-gray-500 font-outfit">Endpoints for {category.title.toLowerCase()} services</p>
                   </div>
                 </div>
 
@@ -587,14 +598,14 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-[#F5F7FA]">
+      <section className="py-24 bg-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#F5F7FA] text-[#1F6AE1] rounded-full text-sm font-semibold mb-4 border border-[#1F6AE1]/20">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6">
               Features
             </span>
-            <h2 className="text-4xl font-bold mb-4 text-[#1A1A1A]">Why Choose Xash Vend API</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold font-sora mb-4 text-xash-dark-text">Why Choose Xash Vend API</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-outfit">
               Everything you need for seamless vending service integration
             </p>
           </div>
@@ -607,17 +618,17 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all"
+                whileHover={{ y: -8 }}
+                className="glass-panel p-8 rounded-3xl hover:shadow-2xl transition-all duration-500 group"
               >
                 <div 
                   style={{ backgroundColor: feature.color }}
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 shadow-lg"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-500"
                 >
-                  <feature.icon className="text-white" size={28} />
+                  <feature.icon className="text-white" size={32} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-3 font-sora text-xash-dark-text">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-outfit">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -625,32 +636,33 @@ fetch('https://staging.xash.co.zw/api/v1/airtime/direct', {
       </section>
 
       {/* Documentation CTA */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#0B3C5D] to-[#1F6AE1] rounded-3xl p-12 text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6">
-              <Terminal size={32} className="text-white" />
+      <section className="py-24 bg-mesh-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none"></div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl mb-8 border border-white/20">
+              <Terminal size={36} className="text-xash-accent-gold" />
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl sm:text-6xl font-bold font-sora mb-8 text-white tracking-tight">
               Ready to Integrate?
             </h2>
-            <p className="text-xl text-[#F5F7FA] mb-8 leading-relaxed max-w-2xl mx-auto">
-              Access complete documentation, code samples, and dedicated developer support
+            <p className="text-xl text-white/80 font-outfit mb-12 leading-relaxed max-w-2xl mx-auto">
+              Access complete documentation, code samples, and dedicated developer support.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.a
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 href="https://docs.xash.co.zw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-[#0B3C5D] px-6 py-3 rounded-lg font-bold shadow-xl inline-flex items-center justify-center hover:bg-[#F5F7FA]"
+                className="bg-xash-accent-gold text-xash-primary-blue px-10 py-5 rounded-2xl font-bold shadow-2xl inline-flex items-center justify-center hover:bg-white transition-all"
               >
                 View Full Documentation
-                <ArrowRight className="ml-2" size={24} />
+                <ArrowRight className="ml-2" size={22} />
               </motion.a>
             </div>
-            <p className="text-[#F5F7FA] text-sm mt-6">
+            <p className="text-white/50 text-sm mt-8 font-outfit">
               Free sandbox access • Comprehensive documentation • 24/7 developer support
             </p>
           </div>

@@ -30,7 +30,7 @@ function App() {
       {/* Place it here once - it handles all route changes automatically */}
       <ScrollToTop /> 
       
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-brand-50/30">
+      <div className="min-h-screen bg-white bg-mesh">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

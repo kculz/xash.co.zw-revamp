@@ -75,24 +75,27 @@ const PrivacyPolicy = () => {
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20 bg-[#F5F7FA]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-mesh relative overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-24 -right-24 w-[400px] h-[400px] bg-xash-primary-blue/10 rounded-full filter blur-3xl" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-[#F5F7FA] rounded-2xl mb-6 shadow-lg border border-[#1F6AE1]/20">
-                <Shield className="text-[#1F6AE1]" size={32} />
+              <div className="inline-flex items-center justify-center w-20 h-20 glass-panel rounded-3xl mb-8 border border-xash-primary-blue/20">
+                <Shield className="text-xash-primary-blue" size={36} />
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#1A1A1A]">
+              <h1 className="text-5xl md:text-6xl font-bold font-sora mb-6 text-xash-dark-text tracking-tight">
                 Privacy Policy
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+              <p className="text-xl text-gray-600 font-outfit max-w-3xl mx-auto leading-relaxed mb-4">
                 Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.
               </p>
-              <p className="text-gray-500">
+              <p className="text-gray-400 font-outfit">
                 Last updated: January 1, 2026
               </p>
             </motion.div>
@@ -255,11 +258,10 @@ const PrivacyPolicy = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ backgroundColor: '#0B3C5D' }}
-            className="rounded-xl shadow-2xl p-8 text-white"
+            className="bg-mesh-dark rounded-3xl shadow-2xl p-10 text-white"
           >
-            <h2 className="text-3xl font-bold mb-6">Contact Us About Privacy</h2>
-            <p className="text-[#F5F7FA] mb-6 leading-relaxed">
+            <h2 className="text-3xl font-bold font-sora mb-6">Contact Us About Privacy</h2>
+            <p className="text-white/80 font-outfit mb-8 leading-relaxed">
               If you have any questions about this Privacy Policy or our data practices, please contact us:
             </p>
             <div className="grid md:grid-cols-2 gap-6">

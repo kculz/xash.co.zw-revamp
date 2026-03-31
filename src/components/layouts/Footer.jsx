@@ -33,8 +33,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#0B3C5D] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-gradient-to-b from-[#0B3C5D] to-[#062033] text-white relative overflow-hidden">
+      {/* Subtle background decoration */}
+      <div className="absolute inset-0 pointer-events-none opacity-10 bg-mesh-dark"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -134,45 +134,59 @@ const Agents = () => {
   return (
     <div className="pt-20 bg-white">
       <Helmet>
-        <title>Become a XASH Agent - Earn Commissions with Zero Investment</title>
+        <title>Become a Xash Agent - Earn Commissions with Zero Investment</title>
         <meta 
           name="description" 
-          content="Join XASH as an agent and start earning commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support." 
+          content="Join Xash as an agent and start earning commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support." 
         />  
       </Helmet>
       {/* Hero Section */}
-      <section className="py-20" style={{ backgroundColor: '#7C3AED' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative py-24 bg-mesh overflow-hidden">
+        {/* Ambient Glows */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-xash-primary-blue/10 rounded-full filter blur-3xl animate-blob" />
+          <div className="absolute bottom-0 -left-32 w-[500px] h-[500px] bg-xash-accent-gold/10 rounded-full filter blur-3xl animate-pulse-slow" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
-                Become a XASH Agent
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6">
+                <span className="flex h-2 w-2 rounded-full bg-xash-primary-blue mr-2 animate-pulse"></span>
+                Join Our Agent Network
+              </span>
+              <h1 className="text-5xl sm:text-7xl font-bold font-sora mb-6 text-xash-dark-text tracking-tight">
+                Become a <span className="bg-gradient-to-r from-xash-primary-blue to-xash-accent-gold bg-clip-text text-transparent">Xash Agent</span>
               </h1>
-              <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-                Join our network of successful agents and earn commissions by providing essential services to your community. No startup costs, flexible hours, and 24/7 support.
+              <p className="text-xl text-gray-600 font-outfit mb-10 leading-relaxed">
+                Join our growing network of successful entrepreneurs earning real commissions from their communities. No startup costs, flexible hours, and dedicated 24/7 support.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
+                <motion.a
+                  href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20become%20an%20agent."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-700 px-8 py-4 rounded-lg font-bold shadow-xl inline-flex items-center justify-center"
+                  className="bg-xash-primary-blue text-white px-8 py-5 rounded-2xl font-bold shadow-xl inline-flex items-center justify-center hover:bg-xash-secondary-blue transition-all"
                 >
                   Register Now
                   <ArrowRight className="ml-2" size={20} />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
+                </motion.a>
+                <motion.a
+                  href="https://wa.me/263716409412"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  style={{ backgroundColor: '#10B981' }}
-                  className="text-white px-8 py-4 rounded-lg font-bold inline-flex items-center justify-center"
+                  className="bg-white border-2 border-xash-primary-blue/20 text-xash-primary-blue px-8 py-5 rounded-2xl font-bold inline-flex items-center justify-center hover:bg-xash-primary-blue/5 transition-all"
                 >
                   <MessageCircle className="mr-2" size={20} />
                   Chat with Support
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
 
@@ -180,19 +194,31 @@ const Agents = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-xash-primary-blue/20 to-xash-accent-gold/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop" 
-                alt="Happy Agent" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80" 
+                alt="Successful Xash Agent" 
+                className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/50"
               />
+              {/* Floating Stat Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                className="absolute -bottom-6 -left-6 glass-panel p-6 rounded-2xl shadow-2xl"
+              >
+                <div className="text-3xl font-bold font-sora text-xash-primary-blue">$5K+</div>
+                <div className="text-sm text-gray-600 font-outfit">Monthly Commissions Paid</div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
@@ -202,17 +228,14 @@ const Agents = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-6 text-center"
+                className="glass-card hover:glass-panel rounded-2xl p-8 text-center transition-all duration-300 group"
               >
-                <div 
-                  style={{ backgroundColor: '#7C3AED' }}
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
-                >
+                <div className="w-16 h-16 rounded-2xl bg-xash-primary-blue flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-500">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                <div className="text-sm font-semibold text-purple-600 mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.description}</div>
+                <div className="text-3xl font-bold font-sora text-xash-dark-text mb-1">{stat.value}</div>
+                <div className="text-sm font-bold text-xash-primary-blue font-outfit mb-1">{stat.label}</div>
+                <div className="text-xs text-gray-500 font-outfit">{stat.description}</div>
               </motion.div>
             ))}
           </div>
@@ -220,17 +243,17 @@ const Agents = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-4">
-              Why Join XASH?
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-xash-primary-blue/20 text-xash-primary-blue text-sm font-bold mb-6">
+              Why Join Xash?
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Benefits of Being a XASH Agent
+            <h2 className="text-4xl md:text-5xl font-bold font-sora mb-4 text-xash-dark-text">
+              Benefits of Being a Xash Agent
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Join thousands of successful agents building their businesses with XASH
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-outfit">
+              Join hundreds of successful agents building their businesses with Xash across Zimbabwe
             </p>
           </div>
 
@@ -242,25 +265,25 @@ const Agents = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all"
+                whileHover={{ y: -8 }}
+                className="glass-panel p-8 rounded-3xl border border-white/60 hover:shadow-2xl transition-all duration-500 group"
               >
                 <div className="mb-6">
                   <div 
                     style={{ backgroundColor: benefit.color }}
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-500"
                   >
                     <benefit.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">
+                  <h3 className="text-xl font-bold mb-3 font-sora text-xash-dark-text text-center">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-4 text-center">
+                  <p className="text-gray-600 leading-relaxed mb-5 text-center font-outfit">
                     {benefit.description}
                   </p>
                   <ul className="space-y-2">
                     {benefit.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                      <li key={idx} className="flex items-center text-sm text-gray-600 font-outfit">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
                         {feature}
                       </li>
@@ -274,16 +297,16 @@ const Agents = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-2 bg-purple-50 text-purple-600 rounded-full text-sm font-semibold mb-4">
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-4 py-2 rounded-full bg-xash-primary-blue/10 text-xash-primary-blue text-sm font-bold mb-6">
               Simple Process
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              How to Become a XASH Agent
+            <h2 className="text-4xl md:text-5xl font-bold font-sora mb-4 text-xash-dark-text">
+              How to Become a Xash Agent
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg font-outfit">
               Start your journey in four simple steps
             </p>
           </div>
@@ -296,17 +319,17 @@ const Agents = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg p-6 text-center"
+                whileHover={{ y: -6 }}
+                className="glass-card hover:glass-panel p-8 rounded-3xl text-center transition-all duration-400 group"
               >
-                <div 
-                  style={{ backgroundColor: '#7C3AED' }}
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
-                >
-                  <step.icon className="w-6 h-6 text-white" />
+                <div className="relative inline-flex mb-5">
+                  <div className="w-16 h-16 rounded-2xl bg-xash-primary-blue flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-xash-accent-gold flex items-center justify-center text-xs font-bold text-xash-primary-blue">{step.step}</div>
                 </div>
-                <div className="text-xs font-semibold text-purple-600 mb-1">STEP {step.step}</div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <h3 className="text-lg font-bold mb-2 font-sora text-xash-dark-text">{step.title}</h3>
+                <p className="text-gray-600 text-sm font-outfit">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -314,18 +337,20 @@ const Agents = () => {
       </section>
 
       {/* Commission Structure */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-mesh">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="relative"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-xash-primary-blue/20 to-xash-accent-gold/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&h=600&fit=crop" 
+                src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=800&q=80" 
                 alt="Agent Success" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                className="relative rounded-3xl shadow-2xl w-full h-[480px] object-cover border-4 border-white/50"
               />
             </motion.div>
 
@@ -334,15 +359,15 @@ const Agents = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="text-center mb-8">
-                <span className="inline-block px-4 py-2 bg-yellow-50 text-yellow-600 rounded-full text-sm font-semibold mb-4">
+              <div className="mb-10">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-xash-accent-gold/20 text-amber-700 text-sm font-bold mb-6">
                   Commission Structure
                 </span>
-                <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                <h2 className="text-4xl font-bold font-sora mb-4 text-xash-dark-text">
                   Service Commission Rates
                 </h2>
-                <p className="text-gray-600 mb-6">
-                  Earn competitive commissions on every transaction
+                <p className="text-gray-600 font-outfit mb-2">
+                  Earn competitive commissions on every transaction you process.
                 </p>
               </div>
 
@@ -354,24 +379,27 @@ const Agents = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl shadow-lg p-6 border border-gray-100"
+                    whileHover={{ x: 4 }}
+                    className="glass-panel p-6 rounded-2xl transition-all duration-300"
                   >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div 
                           style={{ backgroundColor: item.color }}
-                          className="w-2 h-2 rounded-full mr-3"
+                          className="w-3 h-3 rounded-full mr-4 shadow-md"
                         ></div>
-                        <h3 className="text-lg font-bold text-gray-900">{item.service}</h3>
+                        <div>
+                          <h3 className="text-base font-bold font-sora text-xash-dark-text">{item.service}</h3>
+                          <p className="text-gray-500 text-xs font-outfit">{item.example}</p>
+                        </div>
                       </div>
                       <div 
                         style={{ color: item.color }}
-                        className="text-2xl font-bold"
+                        className="text-2xl font-bold font-sora"
                       >
                         {item.rate}
                       </div>
                     </div>
-                    <p className="text-gray-500 text-sm">{item.example}</p>
                   </motion.div>
                 ))}
               </div>
@@ -380,40 +408,40 @@ const Agents = () => {
         </div>
       </section>
 
-      {/* Agent Image Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Agent Story Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">Real People, Real Success</h2>
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Meet our agents who have transformed their income by joining the XASH network. 
-                From students to shop owners, everyone can succeed with XASH.
+              <h2 className="text-4xl sm:text-5xl font-bold font-sora mb-6 text-xash-dark-text">Real People, <span className="text-xash-primary-blue">Real Success</span></h2>
+              <p className="text-gray-600 text-lg font-outfit mb-8 leading-relaxed">
+                Meet our agents who have transformed their income by joining the Xash network. 
+                From students to shop owners, everyone can build a thriving business with Xash.
               </p>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle style={{ color: '#10B981' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+              <div className="space-y-6">
+                <div className="flex items-start glass-panel p-5 rounded-2xl">
+                  <CheckCircle className="text-green-500 mr-4 mt-1 flex-shrink-0" size={22} />
                   <div>
-                    <h4 className="font-bold text-gray-900">Average Monthly Earnings: $650</h4>
-                    <p className="text-gray-600 text-sm">Top agents earn $1,200+ monthly</p>
+                    <h4 className="font-bold font-sora text-xash-dark-text">Average Monthly Earnings: $650</h4>
+                    <p className="text-gray-500 text-sm font-outfit">Top agents earn $1,200+ monthly</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <CheckCircle style={{ color: '#2563EB' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+                <div className="flex items-start glass-panel p-5 rounded-2xl">
+                  <CheckCircle className="text-xash-primary-blue mr-4 mt-1 flex-shrink-0" size={22} />
                   <div>
-                    <h4 className="font-bold text-gray-900">Start Earning Within 24 Hours</h4>
-                    <p className="text-gray-600 text-sm">Quick onboarding and training process</p>
+                    <h4 className="font-bold font-sora text-xash-dark-text">Start Earning Within 24 Hours</h4>
+                    <p className="text-gray-500 text-sm font-outfit">Quick onboarding and training process</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <CheckCircle style={{ color: '#7C3AED' }} className="mr-3 mt-1 flex-shrink-0" size={20} />
+                <div className="flex items-start glass-panel p-5 rounded-2xl">
+                  <CheckCircle className="text-xash-accent-gold mr-4 mt-1 flex-shrink-0" size={22} />
                   <div>
-                    <h4 className="font-bold text-gray-900">No Investment Required</h4>
-                    <p className="text-gray-600 text-sm">Zero registration fees or equipment costs</p>
+                    <h4 className="font-bold font-sora text-xash-dark-text">No Investment Required</h4>
+                    <p className="text-gray-500 text-sm font-outfit">Zero registration fees or equipment costs</p>
                   </div>
                 </div>
               </div>
@@ -423,11 +451,13 @@ const Agents = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="relative"
             >
+              <div className="absolute inset-0 bg-gradient-to-tr from-xash-accent-gold/20 to-xash-primary-blue/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?w=800&h=600&fit=crop" 
+                src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=800&q=80" 
                 alt="Successful Agents" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                className="relative rounded-3xl shadow-2xl w-full h-[480px] object-cover border-4 border-white/50"
               />
             </motion.div>
           </div>
@@ -435,53 +465,58 @@ const Agents = () => {
       </section>
 
       {/* Registration CTA */}
-      <section className="py-20" style={{ backgroundColor: '#7C3AED' }}>
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl mb-6">
-            <Users className="w-10 h-10 text-white" />
+      <section className="py-24 bg-mesh-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-md rounded-3xl mb-8 border border-white/20">
+            <Users className="w-10 h-10 text-xash-accent-gold" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <h2 className="text-4xl sm:text-6xl font-bold font-sora mb-8 text-white tracking-tight">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-blue-100 mb-8 text-lg">
-            Join thousands of successful agents building their businesses with XASH. 
+          <p className="text-white/80 mb-12 text-xl font-outfit max-w-2xl mx-auto">
+            Join hundreds of successful agents building their businesses with Xash. 
             Zero investment, flexible hours, and unlimited earning potential.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <motion.a
+              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20become%20an%20agent."
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              style={{ backgroundColor: '#F59E0B' }}
-              className="text-white px-8 py-4 rounded-lg font-bold inline-flex items-center justify-center shadow-xl"
+              className="bg-xash-accent-gold text-xash-primary-blue px-10 py-5 rounded-2xl font-bold shadow-2xl inline-flex items-center justify-center hover:bg-white transition-all"
             >
               Register Now
               <ArrowRight className="ml-2" size={20} />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
+            </motion.a>
+            <motion.a
+              href="https://wa.me/263716409412"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              style={{ backgroundColor: '#10B981' }}
-              className="text-white px-8 py-4 rounded-lg font-bold inline-flex items-center justify-center"
+              className="bg-transparent border-2 border-white/50 text-white px-10 py-5 rounded-2xl font-bold inline-flex items-center justify-center hover:bg-white/10 transition-all"
             >
               <MessageCircle className="mr-2" size={20} />
               Ask Questions
-            </motion.button>
+            </motion.a>
           </div>
-          <p className="text-purple-200 mt-6 text-sm">
+          <p className="text-white/60 mt-8 text-sm font-outfit">
             Registration takes less than 5 minutes • Start earning within 24 hours
           </p>
 
           {/* Contact Info */}
           <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <Phone className="w-6 h-6 text-white mx-auto mb-3" />
-              <h4 className="font-bold text-white mb-2">Call Us</h4>
-              <p className="text-purple-100 text-sm">+263 716 409 412</p>
+            <div className="glass-panel rounded-2xl p-6 border border-white/20">
+              <Phone className="w-6 h-6 text-xash-accent-gold mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2 font-sora">Call Us</h4>
+              <p className="text-white/70 text-sm font-outfit">+263 716 409 412</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <MapPin className="w-6 h-6 text-white mx-auto mb-3" />
-              <h4 className="font-bold text-white mb-2">Visit Office</h4>
-              <p className="text-purple-100 text-sm">63 Embassy Building, Mutare</p>
+            <div className="glass-panel rounded-2xl p-6 border border-white/20">
+              <MapPin className="w-6 h-6 text-xash-accent-gold mx-auto mb-3" />
+              <h4 className="font-bold text-white mb-2 font-sora">Visit Office</h4>
+              <p className="text-white/70 text-sm font-outfit">63 Embassy Building, Mutare</p>
             </div>
           </div>
         </div>
