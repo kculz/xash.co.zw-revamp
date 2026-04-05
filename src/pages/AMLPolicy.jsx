@@ -13,6 +13,7 @@ import {
   Scale
 } from 'lucide-react';
 import { Helmet } from 'react-helmet';
+import teamImage from '../assets/images/about_team.png';
 
 const AMLPolicy = () => {
   const requirements = [
@@ -324,7 +325,7 @@ const AMLPolicy = () => {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" 
+                src={teamImage}
                 alt="Monitoring Systems" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe, Quote } from 'lucide-react';
+import { ArrowRight, Shield, Smartphone, Wallet, CheckCircle, TrendingUp, Star, Building, Target, Users, Phone, Zap, Wifi, Globe, Quote, Store } from 'lucide-react';
 import econetLogo from '../assets/partners/econet.png';
 import netoneLogo from '../assets/partners/netone.svg';
 import telecelLogo from '../assets/partners/telecel.jpeg';
@@ -10,15 +10,15 @@ import innbucksLogo from '../assets/partners/inbucks.png';
 import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 import { Helmet } from 'react-helmet';
 
-const hero_pos = "https://images.unsplash.com/photo-1589156191108-c7ea6bfd1576?auto=format&fit=crop&w=1200&q=80";
-const business_pos = "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80";
+import hero_pos from '../assets/images/hero_banner_africa.png';
+import business_pos from '../assets/images/retail_store_pos.png';
 
 const Home = () => {
   const FEATURES = [
     {
       icon: Smartphone,
-      title: 'Free POS Device',
-      description: 'Qualifying retail shops receive a Xash POS device at zero cost. Start selling immediately.',
+      title: 'Smart POS Software & Device',
+      description: 'Get the Xash POS application paired with a dedicated device. Manage all sales and services seamlessly.',
       color: '#1F6AE1'
     },
     {
@@ -86,7 +86,7 @@ const Home = () => {
       content: 'The Xash POS has transformed my business. I earn commission daily and my customers love the convenience. The support team is always available to help.',
       rating: 5,
       business: 'Quick Mart',
-      avatar: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://ui-avatars.com/api/?name=Tinashe+M&background=1F6AE1&color=fff&size=150'
     },
     {
       name: 'Sarah K.',
@@ -95,7 +95,7 @@ const Home = () => {
       content: "Switching to Xash was the best decision for my shop. The unified balance for airtime, data, and ZESA makes management so much easier. Highly recommended!",
       rating: 5,
       business: 'City Corner Store',
-      avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://ui-avatars.com/api/?name=Sarah+K&background=0B3C5D&color=fff&size=150'
     },
     {
       name: 'Blessing C.',
@@ -104,7 +104,7 @@ const Home = () => {
       content: "As a small business owner, the additional income from commissions has been life-changing. The device is reliable and the team provides excellent training.",
       rating: 5,
       business: 'Family Groceries',
-      avatar: 'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://ui-avatars.com/api/?name=Blessing+C&background=F5B700&color=fff&size=150'
     },
     {
       name: 'Takudzwa M.',
@@ -113,16 +113,16 @@ const Home = () => {
       content: "I've been using Xash for 6 months and the earnings have been consistent. The weekly payouts are reliable and the system is very user-friendly.",
       rating: 4,
       business: 'Tech Hub Shop',
-      avatar: 'https://images.unsplash.com/photo-1543269664-76b420f3000b?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://ui-avatars.com/api/?name=Takudzwa+M&background=1F6AE1&color=fff&size=150'
     },
     {
       name: 'Grace N.',
       role: 'Supermarket Owner',
       location: 'Masvingo',
-      content: "My customers appreciate the one-stop-shop for all their digital needs. The free POS device and training made it easy to get started. Excellent service!",
+      content: "My customers appreciate the one-stop-shop for all their digital needs. The intuitive POS app and hardware made it easy to get started. Excellent service!",
       rating: 5,
       business: 'Metro Supermarket',
-      avatar: 'https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://ui-avatars.com/api/?name=Grace+N&background=0B3C5D&color=fff&size=150'
     }
   ];
 
@@ -360,42 +360,103 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Image Section */}
-      <section className="py-20 bg-white">
+      {/* Our Dual Solutions Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-4 rounded-full bg-[#1F6AE1]/10 text-[#1F6AE1] text-xs font-bold tracking-wider uppercase mb-4 shadow-sm">
+              Our Products
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-sora text-[#1A1A1A] mb-5">Our Dual Ecosystem</h2>
+            <p className="text-xl text-gray-600 font-outfit max-w-3xl mx-auto leading-relaxed">
+              Choose the solution that best fits your business needs. Whether managing stock or selling digital services — we've got you covered.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Retail POS Software Card */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="bg-[#F5F7FA] rounded-3xl p-8 lg:p-12 border border-gray-200 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group flex flex-col"
             >
-              <ImageWithSkeleton 
-                src={business_pos} 
-                alt="Shop Owner" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">Empowering Local Businesses</h2>
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Join thousands of shop owners across Zimbabwe who are earning extra income by providing 
-                essential digital services to their communities.
-              </p>
-              <div className="space-y-4">
-                {FEATURES.map((feature, index) => (
-                  <div key={index} className="flex items-start">
-                    <CheckCircle style={{ color: feature.color }} className="mr-3 mt-1 flex-shrink-0" size={20} />
-                    <div>
-                      <h4 className="font-bold text-[#1A1A1A]">{feature.title}</h4>
-                      <p className="text-gray-600 text-sm">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#1F6AE1]/10 rounded-full blur-3xl group-hover:bg-[#1F6AE1]/20 transition-all duration-500"></div>
+              
+              <div>
+                <div className="w-16 h-16 bg-[#1F6AE1] rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                  <Store className="text-white" size={32} />
+                </div>
+                
+                <h3 className="text-3xl font-bold font-sora text-[#1A1A1A] mb-4">Retail POS Software</h3>
+                <p className="text-gray-600 font-outfit text-lg mb-8 leading-relaxed">
+                  A complete store management subscription for tracking inventory, managing staff across multiple branches, and gaining real-time sales insights.
+                </p>
               </div>
+              
+              <ul className="space-y-4 mb-10 flex-1">
+                <li className="flex items-center text-gray-700 font-semibold font-outfit">
+                  <CheckCircle className="text-[#1F6AE1] mr-3" size={20} /> 
+                  Advanced Inventory & Stock tracking
+                </li>
+                <li className="flex items-center text-gray-700 font-semibold font-outfit">
+                  <CheckCircle className="text-[#1F6AE1] mr-3" size={20} /> 
+                  Manage Multiple Branch Locations
+                </li>
+                <li className="flex items-center text-gray-700 font-semibold font-outfit">
+                  <CheckCircle className="text-[#1F6AE1] mr-3" size={20} /> 
+                  Subscription plans from $29/mo
+                </li>
+              </ul>
+              
+              <Link to="/retail-pos" className="mt-auto">
+                <button className="bg-white border-2 border-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white text-[#1A1A1A] px-8 py-4 rounded-xl font-bold font-outfit transition-colors w-full shadow-sm flex justify-center items-center">
+                  Explore Software POS
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Digital Vending Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#0B3C5D] rounded-3xl p-8 lg:p-12 border border-[#0B3C5D] shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group flex flex-col"
+            >
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-[#F5B700]/10 rounded-full blur-3xl group-hover:bg-[#F5B700]/20 transition-all duration-500"></div>
+              
+              <div>
+                <div className="w-16 h-16 bg-[#F5B700] rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                  <Smartphone className="text-[#0B3C5D]" size={32} />
+                </div>
+                
+                <h3 className="text-3xl font-bold font-sora text-white mb-4">Digital Vending POS</h3>
+                <p className="text-[#F5F7FA]/90 font-outfit text-lg mb-8 leading-relaxed">
+                  Connect your business to our network. Get our dedicated device to sell airtime, data, and utility payments while earning daily commissions.
+                </p>
+              </div>
+              
+              <ul className="space-y-4 mb-10 flex-1">
+                <li className="flex items-center text-white/90 font-semibold font-outfit">
+                  <CheckCircle className="text-[#F5B700] mr-3" size={20} /> 
+                  Vend Airtime, ZETDC & WiFi
+                </li>
+                <li className="flex items-center text-white/90 font-semibold font-outfit">
+                  <CheckCircle className="text-[#F5B700] mr-3" size={20} /> 
+                  Earn daily competitive commissions
+                </li>
+                <li className="flex items-center text-white/90 font-semibold font-outfit">
+                  <CheckCircle className="text-[#F5B700] mr-3" size={20} /> 
+                  Dedicated digital sales terminal
+                </li>
+              </ul>
+              
+              <Link to="/pos" className="mt-auto">
+                <button className="bg-[#F5B700] hover:bg-[#E0A800] text-[#0B3C5D] px-8 py-4 rounded-xl font-bold font-outfit transition-colors w-full shadow-lg flex justify-center items-center">
+                  Start Vending Now
+                </button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -438,35 +499,63 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Partners Section - Fixed logo sizes */}
-      <section className="py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      {/* Trusted Partners Section */}
+      <section className="py-24 bg-[#F5F7FA] relative overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full filter blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-yellow-500/5 rounded-full filter blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative">
           <div className="text-center">
-            <h2 className="text-4xl font-bold text-[#1A1A1A] mb-4">
+            <span className="inline-block py-1 px-4 rounded-full bg-white border border-[#1F6AE1]/20 text-[#1F6AE1] text-xs font-bold tracking-wider uppercase mb-4 shadow-sm bg-opacity-80 backdrop-blur">
+              Our Network
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-sora text-[#1A1A1A] mb-5 tracking-tight">
               Trusted Partners
             </h2>
-            <p className="text-xl text-gray-600">
-              Working with leading network operators and utility providers
+            <p className="text-xl text-gray-600 font-outfit max-w-2xl mx-auto leading-relaxed">
+              We collaborate with leading network operators and utility providers to ensure seamless, reliable transactions.
             </p>
           </div>
         </div>
 
-        <div className="relative">
-          <div className="flex animate-scroll">
-            {[...PARTNERS, ...PARTNERS].map((partner, index) => (
+        <div className="relative mt-12 pb-8">
+          {/* Gradient Masks for smooth scrolling edges */}
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#F5F7FA] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#F5F7FA] to-transparent z-10 pointer-events-none" />
+
+          {/* Marquee Container */}
+          <div className="flex animate-scroll group relative">
+            {/* We duplicate the list enough times so it can scroll seamlessly */}
+            {[...PARTNERS, ...PARTNERS, ...PARTNERS, ...PARTNERS].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-6 bg-white rounded-xl shadow-lg p-6 w-64"
+                className="flex-shrink-0 mx-4 w-64 sm:w-72"
               >
-                <div className="w-full h-20 flex items-center justify-center mb-4">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="max-w-full max-h-full object-contain rounded-lg"
-                  />
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group/card relative overflow-hidden cursor-pointer">
+                  {/* Subtle hover gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                  
+                  <div className="relative z-10 flex flex-col h-full justify-between gap-6">
+                    <div className="w-full h-24 flex items-center justify-center bg-gray-50/40 rounded-xl p-4 border border-gray-50 group-hover/card:border-blue-100 transition-colors duration-500 shadow-inner">
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain filter transition-transform duration-500 group-hover/card:scale-110 drop-shadow-sm"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <h4 className="font-bold text-lg text-[#1A1A1A] font-sora group-hover/card:text-[#1F6AE1] transition-colors duration-300">
+                        {partner.name}
+                      </h4>
+                      <p className="text-[#0B3C5D]/60 text-xs font-semibold font-outfit mt-2 uppercase tracking-widest">
+                        {partner.type}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="font-bold text-[#1A1A1A] text-center">{partner.name}</h4>
-                <p className="text-gray-500 text-sm text-center">{partner.type}</p>
               </div>
             ))}
           </div>
@@ -478,11 +567,13 @@ const Home = () => {
               transform: translateX(0);
             }
             100% {
+              /* Move half of the entire duplicated width */
               transform: translateX(-50%);
             }
           }
           .animate-scroll {
-            animation: scroll 30s linear infinite;
+            width: max-content;
+            animation: scroll 40s linear infinite;
           }
           .animate-scroll:hover {
             animation-play-state: paused;
@@ -604,14 +695,14 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20apply%20for%20a%20free%20PoS."
+              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20get%20a%20PoS%20system."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-[#0B3C5D] px-6 py-4 rounded-xl font-bold font-outfit shadow-2xl inline-flex items-center justify-center hover:bg-[#F5F7FA] hover:-translate-y-0.5 transition-all"
             >
-              Apply for free PoS
+              Get a POS from Xash
             </motion.a>
             
           </div>

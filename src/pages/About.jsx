@@ -17,7 +17,7 @@ import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const about = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80";
+import about from '../assets/images/about_team.png';
 
 const About = () => {
   const values = [

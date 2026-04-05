@@ -4,9 +4,9 @@ import ImageWithSkeleton from '../components/ui/ImageWithSkeleton';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-const pos = "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=1200&q=80";
-const community_pos = "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80";
-const local_pos = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80";
+import pos from '../assets/images/agent_selling_airtime.png';
+import community_pos from '../assets/images/community_business.png';
+import local_pos from '../assets/images/retail_store_pos.png';
 
 const XashPOS = () => {
   const COMMISSION_DATA = [
@@ -49,7 +49,7 @@ const XashPOS = () => {
     {
       step: 1,
       title: 'Apply for Device',
-      description: 'Qualifying retail shops apply for a free Xash POS device with no upfront costs',
+      description: 'Qualifying retail shops partner with Xash to get the Smart POS software and dedicated device.',
       color: '#1F6AE1'
     },
     {
@@ -81,7 +81,7 @@ const XashPOS = () => {
         <title>Xash POS - Xash</title>
         <meta 
           name="description" 
-          content="Discover Xash POS, a retail-focused solution offering free devices, unified balances, and Zimbabwe-based support for selling digital products and earning commissions." 
+          content="Discover Xash POS, a retail-focused solution offering smart POS software & devices, unified balances, and Zimbabwe-based support for selling digital products and earning commissions." 
         />
       </Helmet>
       {/* Hero Section */}
@@ -114,7 +114,7 @@ const XashPOS = () => {
               {/* Key Benefits */}
               <div className="grid grid-cols-3 gap-4">
                 {[
-                  { icon: Package, title: 'Free Device', desc: 'No upfront costs', color: '#1F6AE1' },
+                  { icon: Smartphone, title: 'Smart POS App', desc: 'Powerful software & hardware', color: '#1F6AE1' },
                   { icon: DollarSign, title: 'Earn Daily', desc: 'Commission on sales', color: '#F5B700' },
                   { icon: Shield, title: 'Secure', desc: 'Bank-grade security', color: '#0B3C5D' }
                 ].map((item, index) => (
@@ -351,12 +351,11 @@ const XashPOS = () => {
                   >
                     <Smartphone size={24} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold ml-4 text-[#1A1A1A]">Free POS Device</h3>
+                  <h3 className="text-2xl font-bold ml-4 text-[#1A1A1A]">Smart POS Software & Device</h3>
                 </div>
                 <div className="space-y-4 mb-6">
                   <p className="text-gray-600 leading-relaxed">
-                    Xash provides qualifying retail shops with a POS device at zero cost. The device connects to our secure platform 
-                    and allows you to vend all products from one interface.
+                    Xash provides qualifying retail shops with our dedicated POS application and device. The software connects directly to our secure platform, giving you a powerful interface to vend all products seamlessly.
                   </p>
                 </div>
                 
@@ -502,19 +501,19 @@ const XashPOS = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20apply%20for%20a%20free%20PoS."
+              href="https://wa.me/263716409412?text=Hello%2C%20I%20would%20like%20to%20get%20a%20PoS%20system."
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-xash-primary-blue px-10 py-5 rounded-2xl font-bold shadow-2xl inline-flex items-center justify-center hover:bg-xash-light-bg transition-all"
             >
-              Get Your Free POS Now
+              Get a POS from Xash
             </motion.a>
           </div>
           <div className="mt-12 flex items-center justify-center space-x-6 text-sm text-white/60">
             <span className="flex items-center"><CheckCircle2 className="mr-2 text-xash-accent-gold" size={16} /> Based in Mutare</span>
-            <span className="flex items-center"><CheckCircle2 className="mr-2 text-xash-accent-gold" size={16} /> Free for qualifying shops</span>
+            <span className="flex items-center"><CheckCircle2 className="mr-2 text-xash-accent-gold" size={16} /> Smart software & hardware</span>
             <span className="flex items-center"><CheckCircle2 className="mr-2 text-xash-accent-gold" size={16} /> Weekly payouts</span>
           </div>
         </div>

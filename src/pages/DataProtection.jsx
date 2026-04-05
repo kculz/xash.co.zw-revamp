@@ -15,6 +15,7 @@ import {
   Clock
 } from 'lucide-react';
 import { Helmet } from 'react-helmet';
+import teamImage from '../assets/images/about_team.png';
 
 const DataProtection = () => {
   const principles = [
@@ -364,7 +365,7 @@ const DataProtection = () => {
               viewport={{ once: true }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop" 
+                src={teamImage}
                 alt="Data Security" 
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />

@@ -17,6 +17,9 @@ import {
   Zap
 } from 'lucide-react';
 import { Helmet } from 'react-helmet';
+import agentImage1 from '../assets/images/about_team.png';
+import agentImage2 from '../assets/images/agent_selling_airtime.png';
+import agentImage3 from '../assets/images/community_business.png';
 
 const Agents = () => {
   const stats = [
@@ -198,7 +201,7 @@ const Agents = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-xash-primary-blue/20 to-xash-accent-gold/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=800&q=80" 
+                src={agentImage1}
                 alt="Successful Xash Agent" 
                 className="relative rounded-3xl shadow-2xl w-full h-[500px] object-cover border-4 border-white/50"
               />
@@ -348,7 +351,7 @@ const Agents = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-xash-primary-blue/20 to-xash-accent-gold/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?auto=format&fit=crop&w=800&q=80" 
+                src={agentImage2}
                 alt="Agent Success" 
                 className="relative rounded-3xl shadow-2xl w-full h-[480px] object-cover border-4 border-white/50"
               />
@@ -455,7 +458,7 @@ const Agents = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-xash-accent-gold/20 to-xash-primary-blue/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=800&q=80" 
+                src={agentImage3}
                 alt="Successful Agents" 
                 className="relative rounded-3xl shadow-2xl w-full h-[480px] object-cover border-4 border-white/50"
               />
