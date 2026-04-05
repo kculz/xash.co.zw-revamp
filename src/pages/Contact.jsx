@@ -213,7 +213,7 @@ const Contact = () => {
   const quickLinks = [
     { 
       icon: Zap, 
-      label: 'Apply for Free POS', 
+      label: 'Get a POS from Xash', 
       path: '/pos', 
       color: '#1F6AE1',
       action: () => handleCTAAction('pos')

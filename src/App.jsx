@@ -4,6 +4,7 @@ import Header from './components/layouts/Header';
 import Footer from './components/layouts/Footer';
 import Home from './pages/Home';
 import XashPOS from './pages/XashPOS';
+import RetailPOS from './pages/RetailPOS';
 import Developers from './pages/Developers';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pos" element={<XashPOS />} />
+          <Route path="/retail-pos" element={<RetailPOS />} />
           <Route path="/developers" element={<Developers />} />
           <Route path="/agents" element={<Agents />} />
           <Route path="/about" element={<About />} />

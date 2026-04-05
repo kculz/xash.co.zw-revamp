@@ -36,10 +36,22 @@ const Header = () => {
       className="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl py-2 z-50 origin-top-left"
     >
       <Link
+        to="/retail-pos"
+        className="block px-4 py-2.5 text-sm text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#1F6AE1] transition-colors"
+      >
+        Retail POS Software
+      </Link>
+      <Link
         to="/pos"
         className="block px-4 py-2.5 text-sm text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#1F6AE1] transition-colors"
       >
-        Xash POS
+        Digital Vending POS
+      </Link>
+      <Link
+        to="/agents"
+        className="block px-4 py-2.5 text-sm text-[#1A1A1A] hover:bg-[#F5F7FA] hover:text-[#1F6AE1] transition-colors"
+      >
+        Agents
       </Link>
       <Link
         to="/developers"
@@ -129,7 +141,7 @@ const Header = () => {
               <button
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
                 className={`flex items-center text-sm font-medium font-outfit transition-colors ${
-                  location.pathname.startsWith('/pos') || location.pathname.startsWith('/developers')
+                  location.pathname.startsWith('/pos') || location.pathname.startsWith('/retail-pos') || location.pathname.startsWith('/developers') || location.pathname.startsWith('/agents')
                     ? 'text-[#1F6AE1]'
                     : 'text-[#1A1A1A] hover:text-[#1F6AE1]'
                 }`}
@@ -238,6 +250,17 @@ const Header = () => {
               <div className="pl-4 space-y-2">
                 <p className="text-sm font-semibold text-gray-500 mb-2">Solutions</p>
                 <Link
+                  to="/retail-pos"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/retail-pos')
+                      ? 'bg-[#1F6AE1] text-white'
+                      : 'bg-[#F5F7FA] text-[#1A1A1A] hover:bg-[#F5F7FA]'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Retail POS Software
+                </Link>
+                <Link
                   to="/pos"
                   className={`block px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive('/pos')
@@ -246,7 +269,18 @@ const Header = () => {
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Xash POS
+                  Digital Vending POS
+                </Link>
+                <Link
+                  to="/agents"
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                    isActive('/agents')
+                      ? 'bg-[#1F6AE1] text-white'
+                      : 'bg-[#F5F7FA] text-[#1A1A1A] hover:bg-[#F5F7FA]'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Agents
                 </Link>
                 <Link
                   to="/developers"
